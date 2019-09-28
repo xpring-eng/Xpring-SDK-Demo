@@ -1,0 +1,15 @@
+{
+  "name": "xpring-demo",
+  "version": "1.0.0",
+  "description": "Demo for Xpring-JS",
+  "main": "index.js",
+  "dependencies": {
+    "xpring-js": "1.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Xpring Engineering",
+  "license": "MIT"
+}
