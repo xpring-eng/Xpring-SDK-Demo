@@ -1,0 +1,6 @@
+[submodule "Carthage/Checkouts/grpc-swift"]
+	url = https://github.com/grpc/grpc-swift.git
+[submodule "Carthage/Checkouts/XpringKit"]
+	url = https://github.com/xpring-eng/XpringKit.git
+[submodule "Carthage/Checkouts/swift-protobuf"]
+	url = https://github.com/apple/swift-protobuf.git
