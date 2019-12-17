@@ -5,7 +5,7 @@ const testNetAddress = "rD7zai6QQQVvWc39ZVAhagDgtH5xwEoeXD";
 
 // The expected address of the gRPC server.
 const grpcURL = "grpc.xpring.tech:80";
-console.log("Hitting " + grpcURL);
+console.log("Using to  " + grpcURL);
 const wallet = Wallet.generateWalletFromSeed("snYP7oArxKepd3GPDcrjMsJYiJeJB");
 
 const recipientAddress = "rsegqrgSP8XmhCYwL9enkZ9BNDNawfPZnn";
@@ -18,6 +18,7 @@ async function main() {
 
   console.log("Retrieving balance for " + testNetAddress);
   const balance = await xrpClient.getBalance(testNetAddress);
+  console.log("Balance was " + balance.getDrops());
 
   console.log("Sending " + amount.getDrops() + " drop of XRP to " + recipientAddress + " from " + wallet.getAddress())
   const result = await xrpClient.send(wallet, amount, recipientAddress)
