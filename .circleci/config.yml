@@ -1,0 +1,12 @@
+version: 2.1
+jobs:
+  build:
+    macos:
+      xcode: "11.1.0"
+
+    steps:
+      - checkout
+
+    run:
+      name: "Run Node SDK Demo"
+      command: cd node && node index.js
