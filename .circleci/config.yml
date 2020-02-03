@@ -7,6 +7,6 @@ jobs:
     steps:
       - checkout
 
-    run:
-      name: "Run Node SDK Demo"
-      command: cd node && npm rebuild && node index.js
+      - run:
+          name: "Run Node SDK Demo"
+          command: cd node && npm rebuild && node index.js
