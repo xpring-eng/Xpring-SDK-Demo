@@ -1,29 +1,33 @@
-const { Wallet, XRPAmount, XpringClient } = require("xpring-js")
-
-// An address on TestNet that has a balance.
-const testNetAddress = "rD7zai6QQQVvWc39ZVAhagDgtH5xwEoeXD";
+const { Wallet, XpringClient } = require("xpring-js")
 
 // The expected address of the gRPC server.
-const grpcURL = "grpc.xpring.tech:80";
-console.log("Using to  " + grpcURL);
-const wallet = Wallet.generateWalletFromSeed("snYP7oArxKepd3GPDcrjMsJYiJeJB");
-
-const recipientAddress = "rsegqrgSP8XmhCYwL9enkZ9BNDNawfPZnn";
+const grpcURL = "3.14.64.116:50051";
+const wallet = Wallet.generateWalletFromSeed(
+  "snYP7oArxKepd3GPDcrjMsJYiJeJB"
+);
+const recipientAddress =
+  "X7cBcY4bdTTzk3LHmrKAK6GyrirkXfLHGFxzke5zTmYMfw4";
+const dropsToSend = "10";
 
 async function main() {
-  const amount = new XRPAmount();
-  amount.setDrops("1");
+  console.log("\nUsing rippled node located at: " + grpcURL + "\n");
+  const xrpClient = new XpringClient(grpcURL, true);
 
-  const xrpClient = XpringClient.xpringClientWithEndpoint(grpcURL);
+  console.log("Retrieving balance for " + wallet.getAddress() + "..");
+  const balance = await xrpClient.getBalance(wallet.getAddress());
+  console.log("Balance was " + balance + " drops!\n");
 
-  console.log("Retrieving balance for " + testNetAddress);
-  const balance = await xrpClient.getBalance(testNetAddress);
-  console.log("Balance was " + balance.getDrops());
+  console.log("Sending:");
+  console.log("- Drops "+ dropsToSend)
+  console.log("- To: " + recipientAddress);
+  console.log("- From: " + wallet.getAddress());
+  const result = await xrpClient.send(
+    dropsToSend,
+    recipientAddress,
+    wallet
+  )
 
-  console.log("Sending " + amount.getDrops() + " drop of XRP to " + recipientAddress + " from " + wallet.getAddress())
-  const result = await xrpClient.send(wallet, amount, recipientAddress)
-
-  console.log("Sent with result: " + result.getEngineResultMessage())
+  console.log("Hash for transaction:\n" + result);
 }
 
 main()
