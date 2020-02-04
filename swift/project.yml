@@ -1,0 +1,9 @@
+name: XpringSDKDemo
+options:
+  postGenCommand: pod install
+  bundleIdPrefix: io.xpring
+targets:
+  Demo:
+    type: tool
+    platform: macOS
+    sources: [Sources]
