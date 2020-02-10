@@ -1,5 +1,8 @@
+use_modular_headers!
+
 target 'Demo' do
-  use_frameworks!
+
+  platform :osx, '10.10'
 
   pod 'XpringKit'
 end

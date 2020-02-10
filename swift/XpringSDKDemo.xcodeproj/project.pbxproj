@@ -7,13 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F589E4459EA7119C89A6355 /* libPods-Demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 03CAA37F8D6B0720E82FE146 /* libPods-Demo.a */; };
 		8E54FF0222A061B750F68D69 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3602E00EBA4D5EF0E2C8B7B7 /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		03CAA37F8D6B0720E82FE146 /* libPods-Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		168681EADFF631AD663CB9A0 /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
 		3602E00EBA4D5EF0E2C8B7B7 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		88B32CDC731E92919AAFC53E /* Pods-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.debug.xcconfig"; path = "Target Support Files/Pods-Demo/Pods-Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		95FB0B055D1A34858C0A97C1 /* Demo */ = {isa = PBXFileReference; includeInIndex = 0; path = Demo; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		62DA9CF76F408FED38FBF4EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0F589E4459EA7119C89A6355 /* libPods-Demo.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		22A1EC6A355F39F4E4E1CC4B /* Sources */ = {
@@ -29,7 +44,27 @@
 			children = (
 				22A1EC6A355F39F4E4E1CC4B /* Sources */,
 				EAB36AFD08909959219DD230 /* Products */,
+				8D0355A48F947187022A8584 /* Pods */,
+				6EBD88036C57B8CC91B191C6 /* Frameworks */,
 			);
+			sourceTree = "<group>";
+		};
+		6EBD88036C57B8CC91B191C6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				03CAA37F8D6B0720E82FE146 /* libPods-Demo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8D0355A48F947187022A8584 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				88B32CDC731E92919AAFC53E /* Pods-Demo.debug.xcconfig */,
+				168681EADFF631AD663CB9A0 /* Pods-Demo.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		EAB36AFD08909959219DD230 /* Products */ = {
@@ -47,7 +82,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 26A776BBD07585318D32CC0F /* Build configuration list for PBXNativeTarget "Demo" */;
 			buildPhases = (
+				09D01723F8BA8333C9938B49 /* [CP] Check Pods Manifest.lock */,
 				7851253FBF03E4885BF04CCD /* Sources */,
+				62DA9CF76F408FED38FBF4EB /* Frameworks */,
+				818866FE10BA001E2DCA5662 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -65,6 +103,8 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1020;
+				TargetAttributes = {
+				};
 			};
 			buildConfigurationList = 514ADDBB9CF5356ADD7D461C /* Build configuration list for PBXProject "XpringSDKDemo" */;
 			compatibilityVersion = "Xcode 10.0";
@@ -75,6 +115,7 @@
 				en,
 			);
 			mainGroup = 42131D72FA16AEEBDD18AE11;
+			productRefGroup = EAB36AFD08909959219DD230 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -82,6 +123,48 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		09D01723F8BA8333C9938B49 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Demo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		818866FE10BA001E2DCA5662 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Demo/Pods-Demo-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Demo/Pods-Demo-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Demo/Pods-Demo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7851253FBF03E4885BF04CCD /* Sources */ = {
@@ -97,6 +180,7 @@
 /* Begin XCBuildConfiguration section */
 		9AC5311EE938F9D39444046E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 168681EADFF631AD663CB9A0 /* Pods-Demo.release.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -169,6 +253,7 @@
 		};
 		C2FB737933676A349C4B4A49 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88B32CDC731E92919AAFC53E /* Pods-Demo.debug.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
