@@ -15,4 +15,3 @@ carthage bootsrap
 open XpringKit.xcodeproj
 ```
 
-carthage bootstrap

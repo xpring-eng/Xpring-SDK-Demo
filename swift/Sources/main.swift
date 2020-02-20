@@ -29,7 +29,7 @@ print("- To: \(recipientAddress)")
 print("- From: \(wallet.address)\n")
 let hash = try xrpClient.send(dropsToSend, to: recipientAddress, from: wallet)
 
-print("Hash for transaction:\n\(hash)")
+print("Hash for transaction:\n\(hash)\n")
 
 let status = try xrpClient.getTransactionStatus(for: hash)
 print("Result for transaction is:\n\(status)\n");

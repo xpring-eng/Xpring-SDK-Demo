@@ -13,4 +13,4 @@ jobs:
 
       - run:
           name: "Run Swift SDK Demo"
-          command: cd swift && carthage bootstrap && xcodebuild
+          command: cd swift && carthage bootstrap --platform mac && set -o pipefail && xcodebuild build -scheme Demo ONLY_ACTIVE_ARCH=YES    
