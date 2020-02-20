@@ -10,3 +10,7 @@ jobs:
       - run:
           name: "Run Node SDK Demo"
           command: cd node && npm i && node src/index.js
+
+      - run:
+          name: "Run Swift SDK Demo"
+          command: cd swift && carthage bootstrap && xcodebuild
