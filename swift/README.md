@@ -11,7 +11,7 @@ To build:
 # Install dependencies
 carthage bootsrap
 
-# Run
+# Run in XCode.
 open XpringKit.xcodeproj
 ```
 
