@@ -1,4 +1,0 @@
-framework module XpringKit {
-  header "XpringKit-Swift.h"
-  requires objc
-}
