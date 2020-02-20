@@ -1,0 +1,28 @@
+# Specification for XpringKit's XCode project.
+name: XpringKit
+options:
+  bundleIdPrefix: io.xpring
+settings:
+  LD_RUNPATH_SEARCH_PATHS: "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks $(PROJECT_DIR)/Carthage/Build/iOS"
+targets:
+  XpringKit:
+    type: framework
+    platform: [iOS, macOS]
+    sources: [XpringKit]
+    resources: [XpringKit/Resources]
+    scheme:
+      testTargets:
+        - XpringKitTests_${platform}
+      gatherCoverageData: true
+    postCompileScripts:
+      - script: swiftlint autocorrect --config .swiftlint.yml
+        name: SwiftLint
+    dependencies:
+      - carthage: SwiftProtobuf
+      - carthage: SwiftGRPC
+  XpringKitTests:
+    type: bundle.unit-test
+    platform: [iOS, macOS]
+    sources: [Tests]
+    dependencies:
+      - target: XpringKit_${platform}
