@@ -1,8 +1,6 @@
 name: XpringSDKDemo
 options:
   bundleIdPrefix: io.xpring
-settings:
-  LD_RUNPATH_SEARCH_PATHS: "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks $(PROJECT_DIR)/Carthage/Build/..."
 targets:
   Demo:
     type: tool
@@ -12,4 +10,6 @@ targets:
       - carthage: XpringKit
       - carthage: SwiftProtobuf
       - carthage: SwiftGRPC
+    settings:
+      LD_RUNPATH_SEARCH_PATHS: "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks $(PROJECT_DIR)/Carthage/Build/Mac"
 
