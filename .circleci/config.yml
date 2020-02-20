@@ -8,6 +8,10 @@ jobs:
       - checkout
 
       - run:
+          name: "Install tooling"
+          command: brew install swiftlint
+
+      - run:
           name: "Run Node SDK Demo"
           command: cd node && npm i && node src/index.js
 
