@@ -8,6 +8,9 @@ This demo builds using [Carthage](https://github.com/Carthage/Carthage) but it i
 
 To build:
 ```shell
+# Install required tooling
+brew install carthage swiftlint
+
 # Install dependencies
 carthage bootsrap
 
