@@ -9,7 +9,7 @@ jobs:
 
       - run:
           name: "Install tooling"
-          command: brew install swiftlint
+          command: brew install swiftlint maven
 
       - run:
           name: "Run Node SDK Demo"
