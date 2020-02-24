@@ -13,7 +13,7 @@ async function main() {
   console.log("\nUsing rippled node located at: " + grpcURL + "\n");
   const xrpClient = new XpringClient(grpcURL, true);
 
-  console.log("Retrieving balance for " + "" + "..");
+  console.log("Retrieving balance for " + "XVYUQ3SdUcVnaTNVanDYo1NamrUukPUPeoGMnmvkEExbtrj" + "..");
   const balance = await xrpClient.getBalance("XVYUQ3SdUcVnaTNVanDYo1NamrUukPUPeoGMnmvkEExbtrj");
   console.log("Balance was " + balance + " drops!\n");
   //
