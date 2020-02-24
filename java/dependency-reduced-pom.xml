@@ -25,7 +25,7 @@
             <configuration>
               <transformers>
                 <transformer>
-                  <mainClass>org.sonatype.haven.HavenCli</mainClass>
+                  <mainClass>io.xpring.demo.Demo</mainClass>
                 </transformer>
               </transformers>
             </configuration>
