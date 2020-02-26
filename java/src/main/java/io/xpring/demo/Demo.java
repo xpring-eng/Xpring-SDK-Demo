@@ -35,5 +35,7 @@ public class Demo {
 
         TransactionStatus status = xrpClient.getTransactionStatus( hash);
         System.out.println("Result for transaction is:\n" + status + "\n");
+
+        xrpClient = null;
     }
 }

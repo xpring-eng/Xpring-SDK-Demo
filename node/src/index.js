@@ -1,7 +1,7 @@
 const { TransactionStatus, Wallet, XpringClient } = require("xpring-js")
 
 // The expected address of the gRPC server.
-const grpcURL = "3.17.152.92:50051";
+const grpcURL = "18.222.225.81:50051" // "3.17.152.92:50051";
 // const wallet = Wallet.generateWalletFromSeed(
 //   "snYP7oArxKepd3GPDcrjMsJYiJeJB"
 // );

@@ -1,1 +1,6 @@
 # java
+
+
+```
+mvn exec:java
+```

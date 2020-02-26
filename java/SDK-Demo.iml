@@ -43,7 +43,6 @@
     <orderEntry type="library" name="Maven: com.google.api.grpc:proto-google-common-protos:1.17.0" level="project" />
     <orderEntry type="library" name="Maven: io.grpc:grpc-protobuf-lite:1.27.1" level="project" />
     <orderEntry type="library" name="Maven: io.grpc:grpc-stub:1.27.1" level="project" />
-    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.30" level="project" />
     <orderEntry type="library" name="Maven: org.graalvm.js:js:20.0.0" level="project" />
     <orderEntry type="library" name="Maven: org.graalvm.regex:regex:20.0.0" level="project" />
     <orderEntry type="library" name="Maven: org.graalvm.sdk:graal-sdk:20.0.0" level="project" />
@@ -55,5 +54,7 @@
     <orderEntry type="library" name="Maven: com.ibm.icu:icu4j:64.2" level="project" />
     <orderEntry type="library" name="Maven: org.graalvm.js:js-scriptengine:20.0.0" level="project" />
     <orderEntry type="library" name="Maven: org.graalvm.truffle:truffle-api:20.0.0" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.30" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.slf4j:slf4j-jdk14:1.7.30" level="project" />
   </component>
 </module>
