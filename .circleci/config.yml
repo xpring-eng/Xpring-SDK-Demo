@@ -8,5 +8,13 @@ jobs:
       - checkout
 
       - run:
+          name: "Install tooling"
+          command: brew install swiftlint
+
+      - run:
           name: "Run Node SDK Demo"
           command: cd node && npm i && node src/index.js
+
+      - run:
+          name: "Run Swift SDK Demo"
+          command: cd swift && carthage bootstrap --platform mac && set -o pipefail && xcodebuild build -scheme Demo ONLY_ACTIVE_ARCH=YES    
