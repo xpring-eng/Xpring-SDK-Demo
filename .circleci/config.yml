@@ -21,4 +21,4 @@ jobs:
 
       - run:
           name: "Run Java SDK Demo"
-          command: cd java && mvn build 
+          command: cd java && mvn package 
