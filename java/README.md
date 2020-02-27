@@ -12,5 +12,5 @@ To build:
 brew install maven
 
 # Build and run demo
-mvn exec:java
+mvn package exec:java
 ```
