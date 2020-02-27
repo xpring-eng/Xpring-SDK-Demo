@@ -43,13 +43,14 @@
             </configuration>
         </plugin>
         <plugin>
-  <groupId>org.codehaus.mojo</groupId>
-  <artifactId>exec-maven-plugin</artifactId>
-  <version>1.4.0</version>
-  <configuration>
-    <mainClass>io.xpring.demo.Demo</mainClass>
-      </configuration>
-      </plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <version>1.4.0</version>
+            <configuration>
+                <mainClass>io.xpring.demo.Demo</mainClass>
+<!--                <cleanupDaemonThreads>false</cleanupDaemonThreads>-->
+            </configuration>
+        </plugin>
     </plugins>
     </build>
 
