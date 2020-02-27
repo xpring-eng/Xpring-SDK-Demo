@@ -1,6 +1,6 @@
 java/*.iml
 java/target
-java/.idea:wq
+java/.idea
 
 
 # Created by https://www.gitignore.io/api/osx,node,java,xcode,swift,intellij,carthage
