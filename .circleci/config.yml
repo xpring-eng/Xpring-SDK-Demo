@@ -9,4 +9,4 @@ jobs:
 
       - run:
           name: "Run Node SDK Demo"
-          command: cd node && node index.js
+          command: cd node && npm i && node src/index.js
