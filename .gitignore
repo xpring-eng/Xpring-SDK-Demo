@@ -1,12 +1,12 @@
 
-# Created by https://www.gitignore.io/api/osx,node,java,xcode,intellij,carthage,swift
-# Edit at https://www.gitignore.io/?templates=osx,node,java,xcode,intellij,carthage,swift
+# Created by https://www.gitignore.io/api/osx,node,java,xcode,swift,intellij,carthage
+# Edit at https://www.gitignore.io/?templates=osx,node,java,xcode,swift,intellij,carthage
 
 ### Carthage ###
 # Carthage
 #
 # Add this line if you want to avoid checking in source code from Carthage dependencies.
-# Carthage/Checkouts
+Carthage/Checkouts
 
 Carthage/Build
 
@@ -353,4 +353,4 @@ iOSInjectionProject/
 ### Xcode Patch ###
 **/xcshareddata/WorkspaceSettings.xcsettings
 
-# End of https://www.gitignore.io/api/osx,node,java,xcode,intellij,carthage,swift
+# End of https://www.gitignore.io/api/osx,node,java,xcode,swift,intellij,carthage
