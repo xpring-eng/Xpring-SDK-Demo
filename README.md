@@ -1,5 +1,4 @@
 # Xpring-SDK-Demo
-*TODO(keefertaylor): Write better documentation.*
 
 Demos for each library in [Xpring SDK](http://github.com/xpring-sdk):
 - [JavaScript / Xpring-JS](http://github.com/xpring-eng/xpring-js): `node/` 
