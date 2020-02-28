@@ -9,7 +9,7 @@ jobs:
 
       - run:
           name: "Install tooling"
-          command: brew install swiftlint
+          command: brew install swiftlint maven
 
       - run:
           name: "Run Node SDK Demo"
@@ -17,4 +17,8 @@ jobs:
 
       - run:
           name: "Run Swift SDK Demo"
-          command: cd swift && carthage bootstrap --platform mac && set -o pipefail && xcodebuild build -scheme Demo ONLY_ACTIVE_ARCH=YES    
+          command: cd swift && carthage bootstrap --platform mac && set -o pipefail && xcodebuild build -scheme Demo ONLY_ACTIVE_ARCH=YES
+
+      - run:
+          name: "Run Java SDK Demo"
+          command: cd java && mvn package 

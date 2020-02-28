@@ -1,0 +1,39 @@
+package io.xpring.demo;
+
+import io.xpring.xrpl.*;
+
+import java.math.BigInteger;
+
+public class Demo {
+    public static void main(String[] args) throws XpringException {
+        // A URL to reach the remote rippled node at.
+        String grpcAddress = "3.14.64.116:50051";
+
+        // A wallet that exists on Testnet.
+        String seed = "snYP7oArxKepd3GPDcrjMsJYiJeJB";
+        Wallet  wallet = new Wallet(seed);
+
+        // A recipient address.
+        String recipientAddress = "X7cBcY4bdTTzk3LHmrKAK6GyrirkXfLHGFxzke5zTmYMfw4";
+        BigInteger dropsToSend = BigInteger.valueOf(10);
+
+        System.out.println("\nUsing rippled node located at: " + grpcAddress + "\n");
+        XpringClient xrpClient = new XpringClient(grpcAddress, true);
+
+        System.out.println("Retrieving balance for" +  wallet.getAddress() + "..");
+        BigInteger balance = xrpClient.getBalance(wallet.getAddress());
+
+        System.out.println("Balance was " + balance + " drops!\n");
+
+        System.out.println("Sending:");
+        System.out.println("- Drops " + dropsToSend );
+        System.out.println("- To: " + recipientAddress);
+        System.out.println("- From: " + wallet.getAddress() + "\n");
+        String hash = xrpClient.send(dropsToSend, recipientAddress, wallet);
+
+        System.out.println("Hash for transaction:\n" + hash + "\n");
+
+        TransactionStatus status = xrpClient.getTransactionStatus( hash);
+        System.out.println("Result for transaction is:\n" + status + "\n");
+    }
+}
