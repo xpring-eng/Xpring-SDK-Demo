@@ -16,9 +16,13 @@ jobs:
           command: cd node && npm i && node src/index.js
 
       - run:
+          name: "Run Node ILP SDK Demo"
+          command: cd node && npm i && node src/index-ilp.js
+
+      - run:
           name: "Run Swift SDK Demo"
           command: cd swift && carthage bootstrap --platform mac && set -o pipefail && xcodebuild build -scheme Demo ONLY_ACTIVE_ARCH=YES
 
       - run:
           name: "Run Java SDK Demo"
-          command: cd java && mvn package 
+          command: cd java && mvn package
