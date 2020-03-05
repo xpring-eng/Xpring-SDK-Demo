@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/java/SDK-Demo.iml" filepath="$PROJECT_DIR$/java/SDK-Demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Xpring-SDK-Demo.iml" filepath="$PROJECT_DIR$/.idea/Xpring-SDK-Demo.iml" />
+    </modules>
+  </component>
+</project>
