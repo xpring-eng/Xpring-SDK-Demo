@@ -12,6 +12,10 @@ jobs:
           command: brew install swiftlint maven
 
       - run:
+          name: "Install Poetry"
+          command: curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
+
+      - run:
           name: "Run Node SDK Demo"
           command: cd node && npm i && node src/index-xrp.js
 
@@ -34,3 +38,7 @@ jobs:
       - run:
           name: "Run Java ILP SDK Demo"
           command: cd java && mvn package && mvn exec:java@ilp
+
+      - run:
+          name: "Run Python SDK Demo"
+          command: cd python && poetry install && poetry run python main.py
