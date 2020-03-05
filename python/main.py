@@ -2,7 +2,6 @@ import time
 
 import xpring
 
-
 url = '3.14.64.116:50051'
 seed = 'ss9unxUg8VgvDjWrogKGVDiRRz97n'
 recipient = 'rNJDvXkaBRwJYdeEcx9pchE2SecMkH3FLz'
