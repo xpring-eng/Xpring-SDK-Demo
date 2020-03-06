@@ -1,6 +1,5 @@
 package io.xpring.demo;
 
-
 import org.interledger.spsp.server.grpc.GetBalanceResponse;
 import org.interledger.spsp.server.grpc.SendPaymentResponse;
 
