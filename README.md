@@ -13,7 +13,7 @@ Each XRP demo:
 - Sends a payment transaction
 - Checks the status of that transaction
 
-ILP Demo (node only)
+Each ILP Demo (node and Java only)
 - Retrieves the balance of `demo_user`
 - Sends an XRP over ILP payment from `demo_user` to `demo_receiver`
 - Retrieves the balance of `demo_user` after the payment is sent
