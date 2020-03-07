@@ -4,7 +4,7 @@
   "description": "Demo for Xpring-JS",
   "main": "index.js",
   "dependencies": {
-    "xpring-js": "1.3.2"
+    "xpring-js": "1.5.1"
   },
   "devDependencies": {},
   "scripts": {
