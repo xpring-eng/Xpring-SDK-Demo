@@ -4,7 +4,7 @@ import io.xpring.xrpl.*;
 
 import java.math.BigInteger;
 
-public class Demo {
+public class XrpDemo {
     public static void main(String[] args) throws XpringException {
         // A URL to reach the remote rippled node at.
         String grpcAddress = "3.14.64.116:50051";

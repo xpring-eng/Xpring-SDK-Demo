@@ -49,7 +49,7 @@
                 <execution>
                     <id>xrp</id>
                     <configuration>
-                        <mainClass>io.xpring.demo.Demo</mainClass>
+                        <mainClass>io.xpring.demo.XrpDemo</mainClass>
                         <cleanupDaemonThreads>false</cleanupDaemonThreads>
                     </configuration>
                 </execution>
