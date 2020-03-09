@@ -1,6 +1,6 @@
 # Swift Demo
 
-<img src="swift-demo.png" alt="Screenshot of the Xpring SDK Demo"/>
+<img src="swift-xrp-demo.png" alt="Screenshot of the Xpring SDK Demo"/>
 
 Demonstrates [XpringKit](http://github.com/xpring-eng/xpringkit). 
 
