@@ -7,7 +7,7 @@ import java.math.BigInteger;
 public class XrpDemo {
     public static void main(String[] args) throws XpringException {
         // A URL to reach the remote rippled node at.
-        String grpcAddress = "test.xrp.xpring.io";
+        String grpcAddress = "test.xrp.xpring.io:50051";
 
         // A wallet that exists on Testnet.
         String seed = "snYP7oArxKepd3GPDcrjMsJYiJeJB";
