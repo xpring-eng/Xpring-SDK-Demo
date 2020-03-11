@@ -2,7 +2,7 @@ import Foundation
 import XpringKit
 
 // A URL to reach the remote rippled node at.
-let grpcAddress = "3.14.64.116:50051"
+let grpcAddress = "test.xrp.xpring.io:50051"
 
 // A wallet that exists on Testnet.
 let seed = "snYP7oArxKepd3GPDcrjMsJYiJeJB";
