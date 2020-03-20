@@ -1,16 +1,16 @@
 package io.xpring.demo;
 
-import org.interledger.spsp.server.grpc.GetBalanceResponse;
-import org.interledger.spsp.server.grpc.SendPaymentResponse;
-
 import com.google.common.primitives.UnsignedLong;
 import io.xpring.ilp.IlpClient;
+import io.xpring.ilp.model.AccountBalance;
+import io.xpring.ilp.model.PaymentRequest;
+import io.xpring.ilp.model.PaymentResponse;
 import io.xpring.xrpl.XpringException;
 
 public class IlpDemo {
 
     public static void main(String[] args) throws XpringException {
-        String grpcUrl = "hermes-grpc.ilpv4.dev";
+        String grpcUrl = "hermes-grpc-test.xpring.dev";
         String demoUserId = "demo_user";
         String demoUserAuthToken = "2S1PZh3fEKnKg";
 
@@ -18,24 +18,29 @@ public class IlpDemo {
         IlpClient ilpClient = new IlpClient(grpcUrl);
 
         System.out.println("Retrieving balance for " + demoUserId + "...");
-        GetBalanceResponse balance = ilpClient.getBalance(demoUserId, demoUserAuthToken);
-        System.out.println("Net balance was " + balance.getNetBalance() + " with asset scale " + balance.getAssetScale());
+        AccountBalance balance = ilpClient.getBalance(demoUserId, demoUserAuthToken);
+        System.out.println("Net balance was " + balance.netBalance() + " with asset scale " + balance.assetScale());
 
-        String receiverPaymentPointer = "$money.ilpv4.dev/demo_receiver";
+        String receiverPaymentPointer = "$xpring.money/demo_receiver";
         UnsignedLong amountToSend = UnsignedLong.valueOf(100);
         System.out.println("Sending payment:");
         System.out.println("- From: " + demoUserId);
         System.out.println("- To: " + receiverPaymentPointer);
         System.out.println("- Amount: " + amountToSend + " drops");
 
-        SendPaymentResponse payment = ilpClient.sendPayment(receiverPaymentPointer, amountToSend, demoUserId, demoUserAuthToken);
+        PaymentRequest paymentRequest = PaymentRequest.builder()
+          .amount(amountToSend)
+          .destinationPaymentPointer(receiverPaymentPointer)
+          .senderAccountId(demoUserId)
+          .build();
+        PaymentResponse payment = ilpClient.sendPayment(paymentRequest, demoUserAuthToken);
 
         System.out.println("Payment sent!");
-        System.out.println("Amount sent: " + payment.getAmountSent());
-        System.out.println("Amount delivered: " + payment.getAmountDelivered());
-        System.out.println("Payment was " + (payment.getSuccessfulPayment() ? "successful!" : "unsuccessful!"));
+        System.out.println("Amount sent: " + payment.amountSent());
+        System.out.println("Amount delivered: " + payment.amountDelivered());
+        System.out.println("Payment was " + (payment.successfulPayment() ? "successful!" : "unsuccessful!"));
 
-        GetBalanceResponse balanceAfterPayment = ilpClient.getBalance(demoUserId, demoUserAuthToken);
-        System.out.println("Net balance after sending payment was " + balanceAfterPayment.getNetBalance());
+        AccountBalance balanceAfterPayment = ilpClient.getBalance(demoUserId, demoUserAuthToken);
+        System.out.println("Net balance after sending payment was " + balanceAfterPayment.netBalance());
     }
 }
