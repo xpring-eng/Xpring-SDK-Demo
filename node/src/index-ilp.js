@@ -1,6 +1,7 @@
-const { IlpClient } = require("xpring-js")
+const { PaymentRequest, IlpClient } = require("xpring-js")
+const bigInt = require("big-integer")
 
-const grpcUrl = 'hermes-grpc.ilpv4.dev'
+const grpcUrl = 'hermes-grpc-test.xpring.dev'
 const demoUserId = "demo_user"
 const demoUserAuthToken = "2S1PZh3fEKnKg"
 
@@ -11,23 +12,30 @@ async function main() {
 
   console.log("Retrieving balance for " + demoUserId + "...")
   const balance = await ilpClient.getBalance(demoUserId, demoUserAuthToken);
-  console.log("Net balance was " + balance.getNetBalance() + " with asset scale " + balance.getAssetScale())
+  console.log("Net balance was " + balance.netBalance + " with asset scale " + balance.assetScale)
 
-  const receiverPaymentPointer = "$money.ilpv4.dev/demo_receiver";
-  let amountToSend = 100;
+  const receiverPaymentPointer = "$xpring.money/demo_receiver";
+  let amountToSend = bigInt(100);
   console.log("\nSending payment:")
   console.log("- From: " + demoUserId)
   console.log("- To: " + receiverPaymentPointer)
   console.log("- Amount: " + amountToSend + " drops")
-  const payment = await ilpClient.send(amountToSend, receiverPaymentPointer, demoUserId, demoUserAuthToken);
+
+  const paymentRequest = new PaymentRequest({
+    amount: amountToSend,
+    destinationPaymentPointer: receiverPaymentPointer,
+    senderAccountId: demoUserId
+  })
+
+  const payment = await ilpClient.sendPayment(paymentRequest, demoUserAuthToken);
 
   console.log("\nPayment sent!")
-  console.log("Amount sent: " + payment.getAmountSent())
-  console.log("Amount delivered: " + payment.getAmountDelivered())
-  console.log("Payment was " + (payment.getSuccessfulPayment() ? 'successful!' : 'unsuccessful!'))
+  console.log("Amount sent: " + payment.amountSent)
+  console.log("Amount delivered: " + payment.amountDelivered)
+  console.log("Payment was " + (payment.successfulPayment ? 'successful!' : 'unsuccessful!'))
 
   const balanceAfterPayment = await ilpClient.getBalance(demoUserId, demoUserAuthToken);
-  console.log("Net balance after sending payment was " + balanceAfterPayment.getNetBalance())
+  console.log("Net balance after sending payment was " + balanceAfterPayment.netBalance)
 }
 
 main()
