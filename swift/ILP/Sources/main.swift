@@ -1,7 +1,7 @@
 import Foundation
 import XpringKit
 
-let grpcUrl = "hermes-grpc.ilpv4.dev"
+let grpcUrl = "hermes-grpc-test.xpring.dev"
 let demoUserId = "demo_user"
 let demoUserAuthToken = "2S1PZh3fEKnKg"
 
@@ -13,15 +13,14 @@ print("Retrieving balance for \(demoUserId)...")
 let getBalance = try ilpClient.getBalance(for: demoUserId, withAuthorization: demoUserAuthToken)
 print("Net balance was \(getBalance.netBalance) with asset scale \(getBalance.assetScale)")
 
-let receiverPaymentPointer = "$money.ilpv4.dev/demo_receiver"
+let receiverPaymentPointer = "$xpring.money/demo_receiver"
 let amountToSend: UInt64 = 100
 print("\nSending payment:")
 print("- From: \(demoUserId)")
 print("- To: \(receiverPaymentPointer)")
 print("- Amount: \(amountToSend) drops")
-let payment = try ilpClient.sendPayment(amountToSend,
-                                        to: receiverPaymentPointer,
-                                        from: demoUserId,
+let paymentRequest = PaymentRequest(amountToSend, to: receiverPaymentPointer, from: demoUserId)
+let payment = try ilpClient.sendPayment(paymentRequest,
                                         withAuthorization: demoUserAuthToken)
 
 print("\nPayment sent!")
