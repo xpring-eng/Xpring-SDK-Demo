@@ -114,7 +114,7 @@
 			attributes = {
 				LastUpgradeCheck = 1020;
 			};
-			buildConfigurationList = 514ADDBB9CF5356ADD7D461C /* Build configuration list for PBXProject "XpringSDKDemo" */;
+			buildConfigurationList = 514ADDBB9CF5356ADD7D461C /* Build configuration list for PBXProject "IlpXpringSDKDemo" */;
 			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -157,7 +157,7 @@
 					"@loader_path/../Frameworks",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = io.xpring.Demo;
 				SDKROOT = macosx;
 			};
@@ -236,7 +236,7 @@
 					"@loader_path/../Frameworks",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = io.xpring.Demo;
 				SDKROOT = macosx;
 			};
@@ -305,7 +305,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = "";
 		};
-		514ADDBB9CF5356ADD7D461C /* Build configuration list for PBXProject "XpringSDKDemo" */ = {
+		514ADDBB9CF5356ADD7D461C /* Build configuration list for PBXProject "IlpXpringSDKDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BED661692A9F40F7242D77BC /* Debug */,
