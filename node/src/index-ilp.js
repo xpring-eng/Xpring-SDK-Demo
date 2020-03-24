@@ -6,7 +6,6 @@ const demoUserId = "demo_user"
 const demoUserAuthToken = "2S1PZh3fEKnKg"
 
 async function main() {
-
   console.log("\nUsing Hermes node located at: " + grpcUrl + "\n")
   const ilpClient = new IlpClient(grpcUrl);
 
