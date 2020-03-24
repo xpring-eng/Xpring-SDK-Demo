@@ -4,7 +4,7 @@
   "description": "Demo for Xpring-JS",
   "main": "index.js",
   "dependencies": {
-    "xpring-js": "3.0.0",
+    "xpring-js": "3.0.1",
     "big-integer": "^1.6.48"
   },
   "devDependencies": {},

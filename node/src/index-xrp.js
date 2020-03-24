@@ -1,4 +1,4 @@
-const { TransactionStatus, Wallet, XpringClient } = require("xpring-js")
+const { TransactionStatus, Wallet, XRPClient } = require("xpring-js")
 
 // The expected address of the gRPC server.
 const grpcURL = "test.xrp.xpring.io:50051";
@@ -11,7 +11,7 @@ const dropsToSend = "10";
 
 async function main() {
   console.log("\nUsing rippled node located at: " + grpcURL + "\n");
-  const xrpClient = new XpringClient(grpcURL, true);
+  const xrpClient = new XRPClient(grpcURL, true);
 
   console.log("Retrieving balance for " + wallet.getAddress() + "..");
   const balance = await xrpClient.getBalance(wallet.getAddress());
@@ -28,9 +28,8 @@ async function main() {
   )
 
   console.log("Hash for transaction:\n" + hash + "\n");
-  
-  const status = await xrpClient.getTransactionStatus(hash);
-    // status.toString()
+
+  const status = await xrpClient.getPaymentStatus(hash);
 
   console.log("Result for transaction is:\n" + statusCodeToString(status) + "\n");
 }
@@ -39,11 +38,11 @@ function statusCodeToString(status) {
   switch (status) {
     case TransactionStatus.Succeeded:
       return "SUCCEEDED"
-    case TransactionStatus.Failed: 
+    case TransactionStatus.Failed:
       return "FAILED"
     case TransactionStatus.Pending:
       return "PENDING"
-    case TransactionStatus.Unknown:      
+    case TransactionStatus.Unknown:
     default:
       return "UNKNOWN"
   }
