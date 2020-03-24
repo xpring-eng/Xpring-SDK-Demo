@@ -11,21 +11,21 @@ jobs:
           name: "Install tooling"
           command: brew install swiftlint maven
 
-      - run:
-          name: "Run Node SDK Demo"
-          command: cd node && npm i && node src/index-xrp.js
-
-      - run:
-          name: "Run Node ILP SDK Demo"
-          command: cd node && npm i && node src/index-ilp.js
-
-      - run:
-          name: "Run Swift SDK Demo"
-          command: cd swift && carthage bootstrap --platform mac && set -o pipefail && xcodebuild build -scheme Demo ONLY_ACTIVE_ARCH=YES
-
-      - run:
-          name: "Run Swift ILP SDK Demo"
-          command: cd swift/ILP && carthage bootstrap --platform mac && set -o pipefail && xcodebuild build -scheme Demo ONLY_ACTIVE_ARCH=YES
+#      - run:
+#          name: "Run Node SDK Demo"
+#          command: cd node && npm i && node src/index-xrp.js
+#
+#      - run:
+#          name: "Run Node ILP SDK Demo"
+#          command: cd node && npm i && node src/index-ilp.js
+#
+#      - run:
+#          name: "Run Swift SDK Demo"
+#          command: cd swift && carthage bootstrap --platform mac && set -o pipefail && xcodebuild build -scheme Demo ONLY_ACTIVE_ARCH=YES
+#
+#      - run:
+#          name: "Run Swift ILP SDK Demo"
+#          command: cd swift/ILP && carthage bootstrap --platform mac && set -o pipefail && xcodebuild build -scheme Demo ONLY_ACTIVE_ARCH=YES
 
       - run:
           name: "Run Java SDK Demo"
