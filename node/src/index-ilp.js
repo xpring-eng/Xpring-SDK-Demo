@@ -1,4 +1,5 @@
-const { IlpClient } = require("xpring-js")
+const { IlpClient, PaymentRequest } = require("xpring-js")
+const bigInt = require('big-integer')
 
 const grpcUrl = 'hermes-grpc.ilpv4.dev'
 const demoUserId = "demo_user"
@@ -19,12 +20,17 @@ async function main() {
   console.log("- From: " + demoUserId)
   console.log("- To: " + receiverPaymentPointer)
   console.log("- Amount: " + amountToSend + " drops")
-  const payment = await ilpClient.sendPayment(amountToSend, receiverPaymentPointer, demoUserId, demoUserAuthToken);
+  const request = new PaymentRequest({
+    amount: bigInt(10),
+    destinationPaymentPointer: '$money.ilpv4.dev/sdk_account2',
+    senderAccountId: 'sdk_account1',
+  })
+  const payment = await ilpClient.sendPayment(request, demoUserAuthToken);
 
   console.log("\nPayment sent!")
-  console.log("Amount sent: " + payment.getAmountSent())
-  console.log("Amount delivered: " + payment.getAmountDelivered())
-  console.log("Payment was " + (payment.getSuccessfulPayment() ? 'successful!' : 'unsuccessful!'))
+  console.log("Amount sent: " + payment.amountSent)
+  console.log("Amount delivered: " + payment.amountDelivered)
+  console.log("Payment was " + (payment.successfulPayment? 'successful!' : 'unsuccessful!'))
 
   const balanceAfterPayment = await ilpClient.getBalance(demoUserId, demoUserAuthToken);
   console.log("Net balance after sending payment was " + balanceAfterPayment.netBalance)
