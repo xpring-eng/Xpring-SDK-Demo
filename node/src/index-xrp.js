@@ -4,7 +4,7 @@ const { TransactionStatus, Wallet, XRPClient } = require("xpring-js")
 // Some options:
 //     dev.xrp.xpring.io:50051
 //     test.xrp.xpring.io:50051
-//     main.xrp.xpring.io:50051 
+//     main.xrp.xpring.io:50051
 const grpcURL = "test.xrp.xpring.io:50051";
 const wallet = Wallet.generateWalletFromSeed(
   "snYP7oArxKepd3GPDcrjMsJYiJeJB"
@@ -32,7 +32,7 @@ async function main() {
   )
 
   console.log("Hash for transaction:\n" + hash + "\n");
-  
+
   const status = await xrpClient.getPaymentStatus(hash);
 
   console.log("Result for transaction is:\n" + statusCodeToString(status) + "\n");
@@ -42,11 +42,11 @@ function statusCodeToString(status) {
   switch (status) {
     case TransactionStatus.Succeeded:
       return "SUCCEEDED"
-    case TransactionStatus.Failed: 
+    case TransactionStatus.Failed:
       return "FAILED"
     case TransactionStatus.Pending:
       return "PENDING"
-    case TransactionStatus.Unknown:      
+    case TransactionStatus.Unknown:
     default:
       return "UNKNOWN"
   }

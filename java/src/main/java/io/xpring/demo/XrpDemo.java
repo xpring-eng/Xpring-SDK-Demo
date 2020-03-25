@@ -10,7 +10,7 @@ public class XrpDemo {
         // Some options:
         //     dev.xrp.xpring.io:50051
         //     test.xrp.xpring.io:50051
-        //     main.xrp.xpring.io:50051 
+        //     main.xrp.xpring.io:50051
         String grpcAddress = "test.xrp.xpring.io:50051";
 
         // A wallet that exists on Testnet.
@@ -22,7 +22,7 @@ public class XrpDemo {
         BigInteger dropsToSend = BigInteger.valueOf(10);
 
         System.out.println("\nUsing rippled node located at: " + grpcAddress + "\n");
-        XpringClient xrpClient = new XpringClient(grpcAddress, true);
+        XRPClient xrpClient = new XRPClient(grpcAddress, true);
 
         System.out.println("Retrieving balance for" +  wallet.getAddress() + "..");
         BigInteger balance = xrpClient.getBalance(wallet.getAddress());
@@ -37,7 +37,7 @@ public class XrpDemo {
 
         System.out.println("Hash for transaction:\n" + hash + "\n");
 
-        TransactionStatus status = xrpClient.getTransactionStatus( hash);
+        TransactionStatus status = xrpClient.getPaymentStatus( hash);
         System.out.println("Result for transaction is:\n" + status + "\n");
     }
 }
