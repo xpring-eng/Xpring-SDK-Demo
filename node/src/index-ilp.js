@@ -1,7 +1,7 @@
 const { IlpClient, PaymentRequest } = require("xpring-js")
 const BigInt = require('big-integer')
 
-const grpcUrl = 'hermes-grpc-test.xpring.dev'
+const grpcUrl = 'hermes-envoy-test.xpring.io'
 const demoUserId = "demo_user"
 const demoUserAuthToken = "2S1PZh3fEKnKg"
 

@@ -10,7 +10,7 @@ import io.xpring.xrpl.XpringException;
 public class IlpDemo {
 
     public static void main(String[] args) throws XpringException {
-        String grpcUrl = "hermes-grpc-test.xpring.dev";
+        String grpcUrl = "hermes-envoy-test.xpring.io";
         String demoUserId = "demo_user";
         String demoUserAuthToken = "2S1PZh3fEKnKg";
 

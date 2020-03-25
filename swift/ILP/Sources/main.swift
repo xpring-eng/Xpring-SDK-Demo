@@ -1,7 +1,7 @@
 import Foundation
 import XpringKit
 
-let grpcUrl = "hermes-grpc-test.xpring.dev"
+let grpcUrl = "hermes-envoy-test.xpring.io"
 let demoUserId = "demo_user"
 let demoUserAuthToken = "2S1PZh3fEKnKg"
 
