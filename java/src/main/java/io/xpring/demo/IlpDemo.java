@@ -4,7 +4,7 @@ import com.google.common.primitives.UnsignedLong;
 import io.xpring.ilp.IlpClient;
 import io.xpring.ilp.model.AccountBalance;
 import io.xpring.ilp.model.PaymentRequest;
-import io.xpring.ilp.model.PaymentResponse;
+import io.xpring.ilp.model.PaymentResult;
 import io.xpring.xrpl.XpringException;
 
 public class IlpDemo {
@@ -33,7 +33,7 @@ public class IlpDemo {
           .destinationPaymentPointer(receiverPaymentPointer)
           .senderAccountId(demoUserId)
           .build();
-        PaymentResponse payment = ilpClient.sendPayment(paymentRequest, demoUserAuthToken);
+        PaymentResult payment = ilpClient.sendPayment(paymentRequest, demoUserAuthToken);
 
         System.out.println("Payment sent!");
         System.out.println("Amount sent: " + payment.amountSent());

@@ -1,12 +1,11 @@
-const { PaymentRequest, IlpClient } = require("xpring-js")
-const bigInt = require("big-integer")
+const { IlpClient, PaymentRequest } = require("xpring-js")
+const BigInt = require('big-integer')
 
 const grpcUrl = 'hermes-grpc-test.xpring.dev'
 const demoUserId = "demo_user"
 const demoUserAuthToken = "2S1PZh3fEKnKg"
 
 async function main() {
-
   console.log("\nUsing Hermes node located at: " + grpcUrl + "\n")
   const ilpClient = new IlpClient(grpcUrl);
 
@@ -15,7 +14,7 @@ async function main() {
   console.log("Net balance was " + balance.netBalance + " with asset scale " + balance.assetScale)
 
   const receiverPaymentPointer = "$xpring.money/demo_receiver";
-  let amountToSend = bigInt(100);
+  let amountToSend = BigInt(100);
   console.log("\nSending payment:")
   console.log("- From: " + demoUserId)
   console.log("- To: " + receiverPaymentPointer)

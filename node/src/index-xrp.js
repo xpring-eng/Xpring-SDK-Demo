@@ -1,6 +1,10 @@
 const { TransactionStatus, Wallet, XRPClient } = require("xpring-js")
 
 // The expected address of the gRPC server.
+// Some options:
+//     dev.xrp.xpring.io:50051
+//     test.xrp.xpring.io:50051
+//     main.xrp.xpring.io:50051
 const grpcURL = "test.xrp.xpring.io:50051";
 const wallet = Wallet.generateWalletFromSeed(
   "snYP7oArxKepd3GPDcrjMsJYiJeJB"
@@ -11,7 +15,7 @@ const dropsToSend = "10";
 
 async function main() {
   console.log("\nUsing rippled node located at: " + grpcURL + "\n");
-  const xrpClient = new XRPClient(grpcURL, true);
+  const xrpClient = new XRPClient(grpcURL);
 
   console.log("Retrieving balance for " + wallet.getAddress() + "..");
   const balance = await xrpClient.getBalance(wallet.getAddress());
