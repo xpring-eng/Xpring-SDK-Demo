@@ -1,7 +1,7 @@
 const { PayIDClient, XRPLNetwork } = require("xpring-js")
 
 // The Pay ID to resolve.
-const payID = '$dev.payid.xpring.money/hbergren'
+const payID = '$doug.purdy.im'; //'$dev.payid.xpring.money/hbergren'
 
 // The network to resolve on. 
 const network = XRPLNetwork.Main
