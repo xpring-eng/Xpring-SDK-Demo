@@ -1,5 +1,5 @@
 const { IlpClient, PaymentRequest } = require("xpring-js")
-const bigInt = require('big-integer')
+const BigInt = require('big-integer')
 
 const grpcUrl = 'hermes-grpc.ilpv4.dev'
 const demoUserId = "demo_user"
@@ -21,7 +21,7 @@ async function main() {
   console.log("- To: " + receiverPaymentPointer)
   console.log("- Amount: " + amountToSend + " drops")
   const request = new PaymentRequest({
-    amount: bigInt(10),
+    amount: BigInt(10),
     destinationPaymentPointer: '$money.ilpv4.dev/sdk_account2',
     senderAccountId: 'sdk_account1',
   })
