@@ -68,7 +68,7 @@ function statusCodeToString(status) {
         return "FAILED"
       case TransactionStatus.Pending:
         return "PENDING"
-      case TransactionStatus.Unknown:      
+      case TransactionStatus.Unknown:
       default:
         return "UNKNOWN"
     }
