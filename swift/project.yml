@@ -2,10 +2,20 @@ name: XpringSDKDemo
 options:
   bundleIdPrefix: io.xpring
 targets:
-  Demo:
+  XRPDemo:
     type: tool
     platform: macOS
-    sources: [Sources]
+    sources: [Sources/XRP]
+    dependencies:
+      - carthage: XpringKit
+      - carthage: SwiftProtobuf
+      - carthage: SwiftGRPC
+    settings:
+      LD_RUNPATH_SEARCH_PATHS: "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks $(PROJECT_DIR)/Carthage/Build/Mac"
+  ILPDemo:
+    type: tool
+    platform: macOS
+    sources: [Sources/ILP]
     dependencies:
       - carthage: XpringKit
       - carthage: SwiftProtobuf

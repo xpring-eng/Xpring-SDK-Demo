@@ -1,0 +1,4 @@
+module BoringSSL {
+    umbrella "../../../Sources/BoringSSL/include"
+    export *
+}
