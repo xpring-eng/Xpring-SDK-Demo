@@ -20,7 +20,7 @@ let recipientAddress = "X7cBcY4bdTTzk3LHmrKAK6GyrirkXfLHGFxzke5zTmYMfw4"
 let dropsToSend: UInt64 = 10
 
 print("\nUsing rippled node located at: \(grpcAddress)\n")
-let xrpClient = XpringClient(grpcURL: grpcAddress, useNewProtocolBuffers: true)
+let xrpClient = XRPClient(grpcURL: grpcAddress, useNewProtocolBuffers: true)
 
 print("Retrieving balance for \(wallet.address) ..")
 let balance = try xrpClient.getBalance(for: wallet.address)
