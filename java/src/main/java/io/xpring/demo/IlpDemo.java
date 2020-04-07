@@ -2,14 +2,14 @@ package io.xpring.demo;
 
 import com.google.common.primitives.UnsignedLong;
 import io.xpring.ilp.IlpClient;
+import io.xpring.ilp.IlpException;
 import io.xpring.ilp.model.AccountBalance;
 import io.xpring.ilp.model.PaymentRequest;
 import io.xpring.ilp.model.PaymentResult;
-import io.xpring.xrpl.XpringException;
 
 public class IlpDemo {
 
-    public static void main(String[] args) throws XpringException {
+    public static void main(String[] args) throws IlpException {
         String grpcUrl = "hermes-envoy-test.xpring.io";
         String demoUserId = "demo_user";
         String demoUserAuthToken = "2S1PZh3fEKnKg";

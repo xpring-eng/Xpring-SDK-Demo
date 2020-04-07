@@ -1,11 +1,12 @@
 package io.xpring.demo;
 
+import io.xpring.common.XRPLNetwork;
 import io.xpring.xrpl.*;
 
 import java.math.BigInteger;
 
 public class XrpDemo {
-    public static void main(String[] args) throws XpringException {
+    public static void main(String[] args) throws XRPException {
         // A URL to reach the remote rippled node at.
         // Some options:
         //     dev.xrp.xpring.io:50051
@@ -22,7 +23,7 @@ public class XrpDemo {
         BigInteger dropsToSend = BigInteger.valueOf(10);
 
         System.out.println("\nUsing rippled node located at: " + grpcAddress + "\n");
-        XRPClient xrpClient = new XRPClient(grpcAddress, true);
+        XRPClient xrpClient = new XRPClient(grpcAddress, XRPLNetwork.TEST);
 
         System.out.println("Retrieving balance for" +  wallet.getAddress() + "..");
         BigInteger balance = xrpClient.getBalance(wallet.getAddress());
