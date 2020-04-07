@@ -39,7 +39,7 @@ async function main() {
   const status = await xrpClient.getPaymentStatus(hash);
   console.log("Result for transaction is:\n" + statusCodeToString(status) + "\n");
 
-  // Retrief full payment history for account
+  // Retrieve full payment history for account
   console.log("Payment hisotry for account " + wallet.getAddress() + ": ");
   const paymentHistory = await xrpClient.paymentHistory(wallet.getAddress());
   console.log(paymentHistory);
