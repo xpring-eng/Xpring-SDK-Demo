@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "big-integer": "^1.6.48",
-    "xpring-js": "3.0.4"
+    "xpring-js": "4.0.0"
   },
   "devDependencies": {},
   "scripts": {
