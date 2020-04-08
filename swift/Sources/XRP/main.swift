@@ -21,7 +21,7 @@ let dropsToSend: UInt64 = 10
 
 // Instantiate an XRPClient connected to the XRP Ledger Testnet
 print("\nUsing rippled node located at: \(grpcAddress)\n")
-let xrpClient = XpringClient(grpcURL: grpcAddress, useNewProtocolBuffers: true)
+let xrpClient = XRPClient(grpcURL: grpcAddress, useNewProtocolBuffers: true)
 
 // Get account balance
 print("Retrieving balance for \(wallet.address) ..")
