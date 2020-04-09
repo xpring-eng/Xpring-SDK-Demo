@@ -45,6 +45,7 @@ print("Result for transaction is:\n\(status)\n");
 // Retrieve full payment history for account
 print("Payment history for account " + wallet.address + ":\n")
 let paymentHistory = try xrpClient.paymentHistory(for: wallet.address)
-for payment in paymentHistory {
+let shortPaymentHistory = paymentHistory.prefix(5) // limit long output
+for payment in shortPaymentHistory {
   print(payment)
 }
