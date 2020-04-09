@@ -42,7 +42,7 @@ async function main() {
   // Retrieve full payment history for account
   console.log("Payment history for account " + wallet.getAddress() + ": ");
   const paymentHistory = await xrpClient.paymentHistory(wallet.getAddress());
-  const shortPaymentHistory = paymentHistory.slice(0, max(paymentHistory.size() + 1, 6))
+  const shortPaymentHistory = paymentHistory.slice(0, min(paymentHistory.size(), 5))
   for (const transaction of shortPaymentHistory) {
     console.log(transaction);
   }
