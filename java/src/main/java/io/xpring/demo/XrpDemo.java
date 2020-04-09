@@ -51,7 +51,7 @@ public class XrpDemo {
         System.out.println("Payment history for account " + wallet.getAddress() +":\n");
         List<XRPTransaction> paymentHistory = xrpClient.paymentHistory(wallet.getAddress());
         List<XRPTransaction> shortPaymentHistory = paymentHistory
-                                                        .subList(0, Integer.max(paymentHistory.size() + 1, 6));
+                                                        .subList(0, Integer.min(paymentHistory.size() + 1, 6));
         for (XRPTransaction transaction : shortPaymentHistory) {
             System.out.println(transaction);
         }
