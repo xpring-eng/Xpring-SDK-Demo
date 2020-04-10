@@ -14,7 +14,7 @@ guard let wallet = Wallet(seed: seed) else {
   print("The given seed is not valid: \(seed)")
   exit(0)
 }
-
+  
 // A recipient address.
 let recipientAddress = "X7cBcY4bdTTzk3LHmrKAK6GyrirkXfLHGFxzke5zTmYMfw4"
 let dropsToSend: UInt64 = 10

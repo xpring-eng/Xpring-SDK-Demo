@@ -6,9 +6,7 @@ java/.idea
 # Edit at https://www.gitignore.io/?templates=osx,node,java,xcode,swift,intellij,carthage
 
 ### Carthage ###
-# Carthage
-#
-# Add this line if you want to avoid checking in source code from Carthage dependencies.
+Carthage
 Carthage/Checkouts
 
 Carthage/Build
