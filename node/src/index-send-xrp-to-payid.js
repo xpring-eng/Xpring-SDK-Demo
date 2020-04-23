@@ -4,7 +4,6 @@ const {
   Wallet,
   PayIDClient,
   XRPClient,
-  XRPLNetwork,
 } = require('xpring-js')
 
 // The expected address of the gRPC server.
@@ -17,11 +16,8 @@ const wallet = Wallet.generateWalletFromSeed('INSERT SEED')
 // The Pay ID to resolve.
 const payID = 'GiveDirectly$payid.charity'
 
-// The network to resolve on. 
-const network = XRPLNetwork.Main
-
 // A client for PayID
-const payIDClient = new PayIDClient(network)
+const payIDClient = new PayIDClient('xrpl-mainnet')
 
 // Amount to send in Drops
 const dropsToSend = '10'
