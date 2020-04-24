@@ -8,13 +8,13 @@ const { PayIDClient } = require('xpring-js')
  * The address you are sending from
  * @type {String}
  */
-const fromAddress = 'ADD YOUR ADDRESS HERE' // 0xD0544A81F0962F7ff0d08Eaf1E5B226DAD331316
+const fromAddress = '0xffff84165744164EAd44C6DEA01dE6DcB4e85A9f' // 0xD0544A81F0962F7ff0d08Eaf1E5B226DAD331316
 
 /**
  * The private key of the account you are sending from
  * @type {String}
  */
-const privateKey = 'PRIVATE KEY GOES HERE' //  INSERT YOUR PRIVATE KEY HERE
+const privateKey = '9104797fd29ca7dc017aab4e9cfdfdfdc143a8636c5a3ac227b4dfa9844e4d23' //  INSERT YOUR PRIVATE KEY HERE
 
 /**
  * Network configuration
