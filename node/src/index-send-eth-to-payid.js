@@ -8,7 +8,7 @@ const { PayIDClient } = require('xpring-js')
  * The address you are sending from
  * @type {String}
  */
-const fromAddress = '0xffff84165744164EAd44C6DEA01dE6DcB4e85A9f' // 0xD0544A81F0962F7ff0d08Eaf1E5B226DAD331316
+const fromAddress = '0xffff84165744164EAd44C6DEA01dE6DcB4e85A9f' // INSERT YOUR ADDRESS HERE
 
 /**
  * The private key of the account you are sending from
