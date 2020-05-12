@@ -7,7 +7,7 @@ license = "MIT"
 
 [tool.poetry.dependencies]
 python = "^3.6"
-xpring = {version = "^0.4.3", extras = ["py"]}
+xpring = {version = "^0.5.0", extras = ["py"]}
 
 [tool.poetry.dev-dependencies]
 
