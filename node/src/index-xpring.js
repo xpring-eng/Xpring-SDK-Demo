@@ -76,7 +76,9 @@ function statusCodeToString(status) {
 
 // Exit with an error code if there is an error. 
 process.on('unhandledRejection', error => {
+  console.log(`Fatal: ${error}`)
   process.exit(1)
 });
+
 
 main()
