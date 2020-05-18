@@ -10,9 +10,9 @@ import io.xpring.ilp.model.PaymentResult;
 public class IlpDemo {
 
     public static void main(String[] args) throws IlpException {
-        String grpcUrl = "hermes-envoy-test.xpring.io";
-        String demoUserId = "demo_user";
-        String demoUserAuthToken = "2S1PZh3fEKnKg";
+        String grpcUrl = "stg.grpcng.wallet.xpring.io";
+        String demoUserId = "sdk_account1";
+        String demoUserAuthToken = "password";
 
         System.out.println("\nUsing Hermes node located at: " + grpcUrl + "\n");
         IlpClient ilpClient = new IlpClient(grpcUrl);
