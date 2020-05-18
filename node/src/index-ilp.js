@@ -1,9 +1,9 @@
 const { IlpClient, PaymentRequest } = require("xpring-js")
 const BigInt = require('big-integer')
 
-const grpcUrl = 'hermes-envoy-test.xpring.io'
-const demoUserId = "demo_user"
-const demoUserAuthToken = "2S1PZh3fEKnKg"
+const grpcUrl = 'stg.grpcng.wallet.xpring.io'
+const demoUserId = "sdk_account1"
+const demoUserAuthToken = "password"
 
 async function main() {
   console.log("\nUsing Hermes node located at: " + grpcUrl + "\n")

@@ -13,7 +13,14 @@ jobs:
 
       - run:
           name: "Run Node SDK Demo"
-          command: cd node && npm i && node src/*
+          command:
+            - cd node
+            - npm i
+            - node src/index-ilp.js 
+            - node src/index-payid.js 
+            - node src/index-send-eth-to-payid.js 
+            - node src/index-xpring.js
+            - node src/index-xrp.js 
 
       - run:
           name: "Prepare Swift Demos"
