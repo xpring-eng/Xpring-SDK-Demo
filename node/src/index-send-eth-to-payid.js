@@ -140,4 +140,9 @@ const main = async () => {
     })
 }
 
+// Exit with an error code if there is an error. 
+process.on('unhandledRejection', error => {
+  process.exit(1)
+});
+
 main()
