@@ -1,5 +1,5 @@
 const { 
-    PayIDClient, 
+    XRPPayIDClient, 
     TransactionStatus, 
     Wallet, 
     XRPClient, 
@@ -20,17 +20,17 @@ const wallet = Wallet.generateWalletFromSeed(
 const dropsToSend = "10";
 
 // The Pay ID to resolve.
-const payID = '$dev.payid.xpring.money/hbergren'
+const payID = 'alice$dev.payid.xpring.money'
 
 // The network to resolve on. 
 const network = XRPLNetwork.Test
 
 async function main() {
     console.log("\nUsing rippled node located at: " + grpcURL + "\n");
-    const xrpClient = new XRPClient(grpcURL);
+    const xrpClient = new XRPClient(grpcURL, network);
 
     console.log("Using network: " + networkToString(network) + "\n");
-    const payIDClient = new PayIDClient(network);
+    const payIDClient = new XRPPayIDClient(network);
 
     const xpringClient = new XpringClient(payIDClient, xrpClient);
 
