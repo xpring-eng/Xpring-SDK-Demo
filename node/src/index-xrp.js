@@ -14,13 +14,16 @@ const recipientAddress =
 const dropsToSend = "10";
 
 async function main() {
+  // Instantiate an XRPClient connected to the XRP Ledger Testnet
   console.log("\nUsing rippled node located at: " + grpcURL + "\n");
   const xrpClient = new XRPClient(grpcURL);
 
+  // Get account balance
   console.log("Retrieving balance for " + wallet.getAddress() + "..");
   const balance = await xrpClient.getBalance(wallet.getAddress());
   console.log("Balance was " + balance + " drops!\n");
 
+  // Send XRP
   console.log("Sending:");
   console.log("- Drops "+ dropsToSend)
   console.log("- To: " + recipientAddress);
@@ -31,11 +34,18 @@ async function main() {
     wallet
   )
 
+  // Check status of the payment
   console.log("Hash for transaction:\n" + hash + "\n");
-
   const status = await xrpClient.getPaymentStatus(hash);
-
   console.log("Result for transaction is:\n" + statusCodeToString(status) + "\n");
+
+  // Retrieve full payment history for account
+  console.log("Payment history for account " + wallet.getAddress() + ": ");
+  const paymentHistory = await xrpClient.paymentHistory(wallet.getAddress());
+  const shortPaymentHistory = paymentHistory.slice(0, Math.min(paymentHistory.size(), 5))
+  for (const transaction of shortPaymentHistory) {
+    console.log(transaction);
+  }
 }
 
 function statusCodeToString(status) {

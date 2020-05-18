@@ -8,7 +8,6 @@ let demoUserAuthToken = "2S1PZh3fEKnKg"
 print("\nUsing Hermes node located at: \(grpcUrl) \n")
 let ilpClient = IlpClient(grpcURL: grpcUrl)
 
-
 print("Retrieving balance for \(demoUserId)...")
 let getBalance = try ilpClient.getBalance(for: demoUserId, withAuthorization: demoUserAuthToken)
 print("Net balance was \(getBalance.netBalance) with asset scale \(getBalance.assetScale)")

@@ -20,12 +20,16 @@ jobs:
           command: cd node && npm i && node src/index-ilp.js
 
       - run:
-          name: "Run Swift SDK Demo"
-          command: cd swift && carthage bootstrap --platform mac && set -o pipefail && xcodebuild build -scheme Demo ONLY_ACTIVE_ARCH=YES
+          name: "Prepare Swift Demos"
+          command: cd swift && carthage bootstrap --platform mac
+
+      - run:
+          name: "Run Swift XRP SDK Demo"
+          command: cd swift && set -o pipefail && xcodebuild build -scheme XRP-Demo ONLY_ACTIVE_ARCH=YES
 
       - run:
           name: "Run Swift ILP SDK Demo"
-          command: cd swift/ILP && carthage bootstrap --platform mac && set -o pipefail && xcodebuild build -scheme Demo ONLY_ACTIVE_ARCH=YES
+          command: cd swift && set -o pipefail && xcodebuild build -scheme ILP-Demo ONLY_ACTIVE_ARCH=YES
 
       - run:
           name: "Run Java SDK Demo"
