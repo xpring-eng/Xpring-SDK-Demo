@@ -26,17 +26,16 @@ jobs:
           command: cd swift && carthage bootstrap --platform mac
 
       - run:
-          name: "Run Swift XRP SDK Demo"
-          command: cd swift && set -o pipefail && xcodebuild build -scheme XRP-Demo ONLY_ACTIVE_ARCH=YES
-
-      - run:
-          name: "Run Swift ILP SDK Demo"
-          command: cd swift && set -o pipefail && xcodebuild build -scheme ILP-Demo ONLY_ACTIVE_ARCH=YES
+          name: "Run Swift SDK Demo"
+          command: |
+            cd swift
+            set -o pipefail && xcodebuild build -scheme XRP-Demo ONLY_ACTIVE_ARCH=YES
+            set -o pipefail && xcodebuild build -scheme ILP-Demo ONLY_ACTIVE_ARCH=YES
 
       - run:
           name: "Run Java SDK Demo"
-          command: cd java && mvn package && mvn exec:java@xrp
-
-      - run:
-          name: "Run Java ILP SDK Demo"
-          command: cd java && mvn package && mvn exec:java@ilp
+          command: |
+            cd java
+            mvn package
+            mvn exec:java@xrp
+            mvn exec:java@ilp

@@ -1,4 +1,5 @@
-github "apple/swift-protobuf" "1.6.0"
-github "attaswift/bigint" "v5.0.0"
+github "Alamofire/Alamofire" "4.9.1"
+github "apple/swift-protobuf" "1.9.0"
+github "attaswift/bigint" "5.1.0"
 github "grpc/grpc-swift" "0.9.1"
-github "xpring-eng/XpringKit" "2.0.0"
+github "xpring-eng/XpringKit" "v3.1.1"
