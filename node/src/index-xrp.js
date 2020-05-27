@@ -42,7 +42,7 @@ async function main() {
   // Retrieve full payment history for account
   console.log("Payment history for account " + wallet.getAddress() + ": ");
   const paymentHistory = await xrpClient.paymentHistory(wallet.getAddress());
-  const shortPaymentHistory = paymentHistory.slice(0, min(paymentHistory.size(), 5))
+  const shortPaymentHistory = paymentHistory.slice(0, Math.min(paymentHistory.length, 5))
   for (const transaction of shortPaymentHistory) {
     console.log(transaction);
   }
@@ -61,5 +61,11 @@ function statusCodeToString(status) {
       return "UNKNOWN"
   }
 }
+
+// Exit with an error code if there is an error. 
+process.on('unhandledRejection', error => {
+  console.log(`Fatal: ${error}`)
+  process.exit(1)
+});
 
 main()

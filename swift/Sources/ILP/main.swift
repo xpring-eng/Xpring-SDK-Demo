@@ -1,9 +1,9 @@
 import Foundation
 import XpringKit
 
-let grpcUrl = "hermes-envoy-test.xpring.io"
-let demoUserId = "demo_user"
-let demoUserAuthToken = "2S1PZh3fEKnKg"
+let grpcUrl = "stg.grpcng.wallet.xpring.io"
+let demoUserId = "sdk_account1"
+let demoUserAuthToken = "password"
 
 print("\nUsing Hermes node located at: \(grpcUrl) \n")
 let ilpClient = IlpClient(grpcURL: grpcUrl)

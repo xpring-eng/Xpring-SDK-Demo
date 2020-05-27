@@ -19,8 +19,13 @@ const privateKey = '9104797fd29ca7dc017aab4e9cfdfdfdc143a8636c5a3ac227b4dfa9844e
 /**
  * Network configuration
  */
-const network = 'https://mainnet.infura.io/v3/2ba7c66b29f44b66aa7916d33a67ffe6'
+const network = 'https://rinkeby.infura.io/v3/2ba7c66b29f44b66aa7916d33a67ffe6'
 const web3 = new Web3(new Web3.providers.HttpProvider(network))
+
+/**
+ * Set the web3 default network to rinkeby REMOVE THIS FOR MAINNET
+ */
+web3.eth.defaultChain = 'rinkeby'
 
 /**
  * Set the web3 default account to use as your public wallet address
@@ -72,7 +77,7 @@ const main = async () => {
     'GiveDirectly$payid.charity',
   )
 
-  console.log(`Address is ${toAddress}\n`)
+  console.log(`Address is ${toAddress.address}\n`)
 
   /**
    * Fetch your personal wallet's balance
@@ -98,15 +103,17 @@ const main = async () => {
    * Build a new transaction object and sign it locally.
    */
   const details = {
-    to: toAddress,
+    to: toAddress.address,
     value: web3.utils.toHex(amountToSend),
     gas: 42000,
     gasPrice: gasPrices.high * 1000000000, // converts the gwei price to wei
     nonce,
-    chainId: 1, // EIP 155 chainId - mainnet: 1, rinkeby: 4
+    chainId: 4, // EIP 155 chainId - mainnet: 1, rinkeby: 4
   }
 
-  const transaction = new EthereumTx(details)
+  const transaction = new EthereumTx(details, {
+    chain: 'rinkeby' // Remove this for mainnet
+  })
 
   /**
    * This is where the transaction is authorized on your behalf.
@@ -129,13 +136,16 @@ const main = async () => {
       /**
        * We now know the transaction ID, so let's build the public Etherscan url where
        * the transaction details can be viewed.
+       * 
+       * Remove the rinkeby subdomain for mainnet
        */
-      console.log(`https://etherscan.io/tx/${hash}`)
+      let url = `https://rinkeby.etherscan.io/tx/${hash}`
+      console.log(url)
 
       console.log(
         'Note: please allow for 30 seconds before transaction appears on Etherscan\n',
       )
-      open(`https://etherscan.io/tx/${hash}`)
+      open(url)
       process.exit()
     })
 }

@@ -21,7 +21,7 @@ let dropsToSend: UInt64 = 10
 
 // Instantiate an XRPClient connected to the XRP Ledger Testnet
 print("\nUsing rippled node located at: \(grpcAddress)\n")
-let xrpClient = XRPClient(grpcURL: grpcAddress, useNewProtocolBuffers: true)
+let xrpClient = XRPClient(grpcURL: grpcAddress, network: .test)
 
 // Get account balance
 print("Retrieving balance for \(wallet.address) ..")
@@ -39,7 +39,7 @@ let hash = try xrpClient.send(dropsToSend, to: recipientAddress, from: wallet)
 print("Hash for transaction:\n\(hash)\n")
 
 // Check status of the payment
-let status = try xrpClient.getTransactionStatus(for: hash)
+let status = try xrpClient.paymentStatus(for: hash)
 print("Result for transaction is:\n\(status)\n");
 
 // Retrieve full payment history for account
