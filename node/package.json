@@ -4,8 +4,12 @@
   "description": "Demo for Xpring-JS",
   "main": "index.js",
   "dependencies": {
+    "axios": "^0.19.2",
     "big-integer": "^1.6.48",
-    "xpring-js": "3.0.4"
+    "ethereumjs-tx": "^2.1.2",
+    "open": "^7.0.3",
+    "web3": "^1.2.6",
+    "xpring-js": "4.2.9"
   },
   "devDependencies": {},
   "scripts": {

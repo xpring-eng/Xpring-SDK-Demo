@@ -1,13 +1,13 @@
-const { PayIDClient, XRPLNetwork } = require("xpring-js")
+const { XRPPayIDClient, XRPLNetwork } = require("xpring-js")
 
 // The Pay ID to resolve.
-const payID = '$doug.purdy.im'; //'$dev.payid.xpring.money/hbergren'
+const payID = 'alice$dev.payid.xpring.money'
 
 // The network to resolve on. 
 const network = XRPLNetwork.Main
 
 // A client for PayID
-const payIDClient = new PayIDClient(network);
+const payIDClient = new XRPPayIDClient(network);
 
 async function main() {
     console.log("Resolving Pay ID: " + payID);
@@ -29,5 +29,12 @@ function networkToString(network) {
             return "Unknown Network"
     }
 }
+
+// Exit with an error code if there is an error. 
+process.on('unhandledRejection', error => {
+    console.log(`Fatal: ${error}`)
+    process.exit(1)
+  });
+    
 
 main()

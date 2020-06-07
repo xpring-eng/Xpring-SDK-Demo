@@ -7,46 +7,64 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		44B2D181A4C9A0068061C7BE /* SwiftProtobuf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF1585449D11C6939D7D624 /* SwiftProtobuf.framework */; };
-		572378EC8408C174E2CB7407 /* XpringKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC1538E2E17772942A5517C3 /* XpringKit.framework */; };
-		8E54FF0222A061B750F68D69 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3602E00EBA4D5EF0E2C8B7B7 /* main.swift */; };
-		E87D72F80089140EC2374387 /* SwiftGRPC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF40EB4F37E027A22E6604B8 /* SwiftGRPC.framework */; };
+		2B8DCF86F9F0D747B7C83479 /* XpringKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC1538E2E17772942A5517C3 /* XpringKit.framework */; };
+		3526551CC685E4D4BAB31531 /* SwiftGRPC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF40EB4F37E027A22E6604B8 /* SwiftGRPC.framework */; };
+		5A1EE1EFE2575FCABBE73450 /* SwiftProtobuf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF1585449D11C6939D7D624 /* SwiftProtobuf.framework */; };
+		60F02DB3B43009EAB6E436DE /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB173D63859DB1E47B39D1E8 /* main.swift */; };
+		7F02CC93F4FCDA935E897A3C /* SwiftProtobuf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF1585449D11C6939D7D624 /* SwiftProtobuf.framework */; };
+		917748B805A397214656A79E /* XpringKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC1538E2E17772942A5517C3 /* XpringKit.framework */; };
+		A112CA8A4FA55728057863D7 /* SwiftGRPC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF40EB4F37E027A22E6604B8 /* SwiftGRPC.framework */; };
+		EAB26F61826425F1E8F84B2F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EFD27AC920765763AEC83D /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3602E00EBA4D5EF0E2C8B7B7 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		95FB0B055D1A34858C0A97C1 /* Demo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Demo; sourceTree = BUILT_PRODUCTS_DIR; };
+		20EFD27AC920765763AEC83D /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		9E361485AE4C0990FFC4EB7D /* XRP-Demo */ = {isa = PBXFileReference; includeInIndex = 0; path = "XRP-Demo"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF40EB4F37E027A22E6604B8 /* SwiftGRPC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SwiftGRPC.framework; sourceTree = "<group>"; };
 		CFF1585449D11C6939D7D624 /* SwiftProtobuf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SwiftProtobuf.framework; sourceTree = "<group>"; };
+		D25C211083B60DFFA3F86B4A /* ILP-Demo */ = {isa = PBXFileReference; includeInIndex = 0; path = "ILP-Demo"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB173D63859DB1E47B39D1E8 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		DC1538E2E17772942A5517C3 /* XpringKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = XpringKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		153518613112692DCD87EE93 /* Frameworks */ = {
+		669653EF843641F6BDE67FC7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				572378EC8408C174E2CB7407 /* XpringKit.framework in Frameworks */,
-				44B2D181A4C9A0068061C7BE /* SwiftProtobuf.framework in Frameworks */,
-				E87D72F80089140EC2374387 /* SwiftGRPC.framework in Frameworks */,
+				2B8DCF86F9F0D747B7C83479 /* XpringKit.framework in Frameworks */,
+				5A1EE1EFE2575FCABBE73450 /* SwiftProtobuf.framework in Frameworks */,
+				3526551CC685E4D4BAB31531 /* SwiftGRPC.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6F2CF8700391F97237A7FC72 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				917748B805A397214656A79E /* XpringKit.framework in Frameworks */,
+				7F02CC93F4FCDA935E897A3C /* SwiftProtobuf.framework in Frameworks */,
+				A112CA8A4FA55728057863D7 /* SwiftGRPC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		22A1EC6A355F39F4E4E1CC4B /* Sources */ = {
+		009DE0E96E1E86237402E9E9 /* ILP */ = {
 			isa = PBXGroup;
 			children = (
-				3602E00EBA4D5EF0E2C8B7B7 /* main.swift */,
+				20EFD27AC920765763AEC83D /* main.swift */,
 			);
-			path = Sources;
+			name = ILP;
+			path = Sources/ILP;
 			sourceTree = "<group>";
 		};
 		42131D72FA16AEEBDD18AE11 = {
 			isa = PBXGroup;
 			children = (
-				22A1EC6A355F39F4E4E1CC4B /* Sources */,
+				009DE0E96E1E86237402E9E9 /* ILP */,
+				EC3A9F987AAB6337BD308A86 /* XRP */,
 				F36B7758D7899E35B52F881D /* Frameworks */,
 				EAB36AFD08909959219DD230 /* Products */,
 			);
@@ -65,9 +83,19 @@
 		EAB36AFD08909959219DD230 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				95FB0B055D1A34858C0A97C1 /* Demo */,
+				D25C211083B60DFFA3F86B4A /* ILP-Demo */,
+				9E361485AE4C0990FFC4EB7D /* XRP-Demo */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		EC3A9F987AAB6337BD308A86 /* XRP */ = {
+			isa = PBXGroup;
+			children = (
+				DB173D63859DB1E47B39D1E8 /* main.swift */,
+			);
+			name = XRP;
+			path = Sources/XRP;
 			sourceTree = "<group>";
 		};
 		F36B7758D7899E35B52F881D /* Frameworks */ = {
@@ -90,20 +118,36 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4EB4304EA4489A33BC7585F2 /* Demo */ = {
+		CCC4CB7F78476367FA472897 /* ILP-Demo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 26A776BBD07585318D32CC0F /* Build configuration list for PBXNativeTarget "Demo" */;
+			buildConfigurationList = 5C80F6EA5D27FFBE3836227B /* Build configuration list for PBXNativeTarget "ILP-Demo" */;
 			buildPhases = (
-				7851253FBF03E4885BF04CCD /* Sources */,
-				153518613112692DCD87EE93 /* Frameworks */,
+				86FEC02DA05E880FAE9C7501 /* Sources */,
+				669653EF843641F6BDE67FC7 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Demo;
-			productName = Demo;
-			productReference = 95FB0B055D1A34858C0A97C1 /* Demo */;
+			name = "ILP-Demo";
+			productName = "ILP-Demo";
+			productReference = D25C211083B60DFFA3F86B4A /* ILP-Demo */;
+			productType = "com.apple.product-type.tool";
+		};
+		E007DC80467E4F945D2E9A2C /* XRP-Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 054D7D7F8D54B6BEC19D75CC /* Build configuration list for PBXNativeTarget "XRP-Demo" */;
+			buildPhases = (
+				553B14144756A554B1DE526B /* Sources */,
+				6F2CF8700391F97237A7FC72 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "XRP-Demo";
+			productName = "XRP-Demo";
+			productReference = 9E361485AE4C0990FFC4EB7D /* XRP-Demo */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -113,37 +157,47 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1020;
+				TargetAttributes = {
+				};
 			};
 			buildConfigurationList = 514ADDBB9CF5356ADD7D461C /* Build configuration list for PBXProject "XpringSDKDemo" */;
 			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				Base,
 				en,
 			);
 			mainGroup = 42131D72FA16AEEBDD18AE11;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4EB4304EA4489A33BC7585F2 /* Demo */,
+				CCC4CB7F78476367FA472897 /* ILP-Demo */,
+				E007DC80467E4F945D2E9A2C /* XRP-Demo */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		7851253FBF03E4885BF04CCD /* Sources */ = {
+		553B14144756A554B1DE526B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E54FF0222A061B750F68D69 /* main.swift in Sources */,
+				60F02DB3B43009EAB6E436DE /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86FEC02DA05E880FAE9C7501 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAB26F61826425F1E8F84B2F /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		9AC5311EE938F9D39444046E /* Release */ = {
+		33F11D815C733F05003CC17A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -151,14 +205,36 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
-				LD_RUNPATH_SEARCH_PATHS = (
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks $(PROJECT_DIR)/Carthage/Build/Mac";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.xpring.ILP-Demo";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		46A46BBDB5FFC44586CF9B46 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				PRODUCT_BUNDLE_IDENTIFIER = io.xpring.Demo;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks $(PROJECT_DIR)/Carthage/Build/Mac";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.xpring.XRP-Demo";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		A41D8FE1AC5AFBE989D7250A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks $(PROJECT_DIR)/Carthage/Build/Mac";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.xpring.ILP-Demo";
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -222,26 +298,6 @@
 			};
 			name = Debug;
 		};
-		C2FB737933676A349C4B4A49 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				PRODUCT_BUNDLE_IDENTIFIER = io.xpring.Demo;
-				SDKROOT = macosx;
-			};
-			name = Debug;
-		};
 		D4730AD7D8CAAA6797C22B0A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -293,23 +349,46 @@
 			};
 			name = Release;
 		};
+		F387BECC6624500E2F3C2FB5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks $(PROJECT_DIR)/Carthage/Build/Mac";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.xpring.XRP-Demo";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		26A776BBD07585318D32CC0F /* Build configuration list for PBXNativeTarget "Demo" */ = {
+		054D7D7F8D54B6BEC19D75CC /* Build configuration list for PBXNativeTarget "XRP-Demo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C2FB737933676A349C4B4A49 /* Debug */,
-				9AC5311EE938F9D39444046E /* Release */,
+				46A46BBDB5FFC44586CF9B46 /* Debug */,
+				F387BECC6624500E2F3C2FB5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = "";
+			defaultConfigurationName = Debug;
 		};
 		514ADDBB9CF5356ADD7D461C /* Build configuration list for PBXProject "XpringSDKDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BED661692A9F40F7242D77BC /* Debug */,
 				D4730AD7D8CAAA6797C22B0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		5C80F6EA5D27FFBE3836227B /* Build configuration list for PBXNativeTarget "ILP-Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33F11D815C733F05003CC17A /* Debug */,
+				A41D8FE1AC5AFBE989D7250A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
