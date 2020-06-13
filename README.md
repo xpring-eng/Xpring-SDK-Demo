@@ -4,6 +4,7 @@ Demos for each library in [Xpring SDK](https://github.com/xpring-eng/xpring-sdk)
 - [JavaScript / Xpring-JS](http://github.com/xpring-eng/xpring-js): `node/` 
 - [Java / Xpring4J](http://github.com/xpring-eng/xpring4j): `java/`
 - [Swift / XpringKit](http://github.com/xpring-eng/xpringkit): `swift/`
+- [Python / xpring-py](https://github.com/thejohnfreeman/xpring-py): [`python/`](./python)
 
 Build instructions included in each folder.
 
