@@ -32,4 +32,15 @@ targets:
       - carthage: SwiftGRPC
     settings:
       LD_RUNPATH_SEARCH_PATHS: "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks $(PROJECT_DIR)/Carthage/Build/Mac"
+  Xpring-Demo:
+    type: tool
+    platform: macOS
+    sources: [Sources/Xpring]
+    dependencies:
+      - carthage: XpringKit
+      - carthage: SwiftProtobuf
+      - carthage: SwiftGRPC
+    settings:
+      LD_RUNPATH_SEARCH_PATHS: "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks $(PROJECT_DIR)/Carthage/Build/Mac"
+
 
