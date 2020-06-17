@@ -4,62 +4,31 @@ import io.xpring.payid.idiomatic.PayIdException;
 
 public class PayIdDemo {
   public static void main(String[] args) throws PayIdException {
+    // The Pay ID to resolve.
+    String payId = "alice$dev.payid.xpring.money";
 
-const { PayIDClient, XRPPayIDClient, XRPLNetwork } = require("xpring-js")
+    // The XRP Ledger network to resolve on.
+    XrplNetwork xrpNetwork = XrplNetwork.Main;
 
-// The Pay ID to resolve.
-const payId = 'alice$dev.payid.xpring.money'
+    // The BTC network to resolve on.
+    String btcNetwork = "btc-testnet";
 
-// The XRP network to resolve on.
-const xrpNetwork = XRPLNetwork.Main
+    // A client to resolve PayIDs on the XRP Ledger.
+    XrpPayIdClient xrpPayIdClient = new XrpPayIdClient(xrpNetwork);
 
-// The BTC network to resolve on.
-const btcNetwork = 'btc-testnet'
+    // A client to resolve PayIDs on the Bitcoin network.
+    PayIdClient btcPayIdClient = new PayIDClient(btcNetwork);
 
-// A client to resolve PayIDs on the XRP Ledger.
-const xrpPayIdClient = new XRPPayIDClient(xrpNetwork);
+    System.out.println("Resolving Pay ID: " + payId);
+    System.out.println("On network: " + xrpNetwork);
 
-// A client to resolve PayIDs on the Bitcoin network.
-const btcPayIdClient = new PayIDClient(btcNetwork)
+    String xrpAddress = xrpPayIdClient.xrpAddressForPayID(payId);
+    System.out.println("Resolved to " + xrpAddress);
+    System.out.println("");
 
-    async function main() {
-      console.log("Resolving Pay ID: " + payId);
-      console.log("On network: " + networkToString(xrpNetwork))
-
-    const xrpAddress = await xrpPayIdClient.xrpAddressForPayID(payId)
-      console.log("Resolved to " + xrpAddress)
-      console.log("")
-
-      console.log("Resolving Pay ID: " + payId);
-      console.log("On network: " + btcNetwork)
-    const btcAddressComponents = await btcPayIdClient.addressForPayID(payId)
-      console.log("Resolved to " + btcAddressComponents.address)
-    }
-
-    function networkToString(network) {
-        switch (network) {
-          case XRPLNetwork.Dev:
-            return "Devnet"
-          case XRPLNetwork.Test:
-            return "Testnet"
-          case XRPLNetwork.Main:
-            return "Mainnet"
-          default:
-            return "Unknown Network"
-        }
-    }
-
-// Exit with an error code if there is an error.
-    process.on('unhandledRejection', error => {
-        console.log(`Fatal: ${error}`)
-        process.exit(1)
-    });
-
-
-    main()
-
-
-
-    // TODO(keefertaylor): Implement.
+    System.out.println("Resolving Pay ID: " + payId);
+    System.out.println("On network: " + btcNetwork);
+    CryptoAddressDetails addressDetails = btcPayIdClient.addressForPayID(payId);
+    System.out.println("Resolved to " + btcAddressComponents.getAddress());
   }
 }
