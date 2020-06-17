@@ -25,7 +25,7 @@ let dispatchGroup = DispatchGroup()
 DispatchQueue.global(qos: .background).async {
   dispatchGroup.enter()
 
-  print("Resolving Pay ID: \(payID)")
+  print("Resolving PayID: \(payID)")
   print("On XRP Network: \(xrplNetwork)")
   xrpPayIDClient.xrpAddress(for:  "alice$dev.payid.xpring.money") { result in
     switch result {
