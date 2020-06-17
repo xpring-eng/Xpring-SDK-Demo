@@ -1,23 +1,27 @@
 package io.xpring.demo;
 
-import io.xpring.payid.idiomatic.PayIdException;
+import io.xpring.common.XRPLNetwork;
+import io.xpring.payid.generated.model.CryptoAddressDetails;
+import io.xpring.payid.PayIDClient;
+import io.xpring.payid.XRPPayIDClient;
+import io.xpring.payid.PayIDException;
 
 public class PayIdDemo {
-  public static void main(String[] args) throws PayIdException {
+  public static void main(String[] args) throws PayIDException {
     // The Pay ID to resolve.
     String payId = "alice$dev.payid.xpring.money";
 
     // The XRP Ledger network to resolve on.
-    XrplNetwork xrpNetwork = XrplNetwork.Main;
+    XRPLNetwork xrpNetwork = XRPLNetwork.MAIN;
 
     // The BTC network to resolve on.
     String btcNetwork = "btc-testnet";
 
     // A client to resolve PayIDs on the XRP Ledger.
-    XrpPayIdClient xrpPayIdClient = new XrpPayIdClient(xrpNetwork);
+    XRPPayIDClient xrpPayIdClient = new XRPPayIDClient(xrpNetwork);
 
     // A client to resolve PayIDs on the Bitcoin network.
-    PayIdClient btcPayIdClient = new PayIDClient(btcNetwork);
+    PayIDClient btcPayIdClient = new PayIDClient(btcNetwork);
 
     System.out.println("Resolving Pay ID: " + payId);
     System.out.println("On network: " + xrpNetwork);
@@ -28,7 +32,7 @@ public class PayIdDemo {
 
     System.out.println("Resolving Pay ID: " + payId);
     System.out.println("On network: " + btcNetwork);
-    CryptoAddressDetails addressDetails = btcPayIdClient.addressForPayID(payId);
+    CryptoAddressDetails btcAddressComponents = btcPayIdClient.addressForPayID(payId);
     System.out.println("Resolved to " + btcAddressComponents.getAddress());
   }
 }

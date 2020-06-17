@@ -61,14 +61,14 @@
                     </configuration>
                 </execution>
                 <execution>
-                    <id>xrp</id>
+                    <id>payid</id>
                     <configuration>
                         <mainClass>io.xpring.demo.PayIdDemo</mainClass>
                         <cleanupDaemonThreads>false</cleanupDaemonThreads>
                     </configuration>
                 </execution>
                 <execution>
-                    <id>xrp</id>
+                    <id>xpring</id>
                     <configuration>
                         <mainClass>io.xpring.demo.XpringDemo</mainClass>
                         <cleanupDaemonThreads>false</cleanupDaemonThreads>
