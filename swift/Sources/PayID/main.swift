@@ -40,7 +40,7 @@ DispatchQueue.global(qos: .background).async {
   dispatchGroup.wait()
 
 
-  // Resolve a PayID to an BTC Address.
+  // Resolve a PayID to a BTC Address.
   print("Resolving Pay ID: \(payID)")
   print("On network: \(btcNetwork)")
   dispatchGroup.enter()
