@@ -1,3 +1,4 @@
+import Foundation
 import XpringKit
 
 // The Pay ID to resolve.
@@ -7,7 +8,7 @@ let payID = "alice$dev.payid.xpring.money"
 let xrplNetwork = XRPLNetwork.main
 
 // A client which can resolve PayIDs on the XRP ledger network.
-let xrpPayIDClient = XRPPayIDClient(xrplNetwork: xrplNetwork)
+let xrpPayIDClient = XRPPayIDClient(xrplNetwork: .main)
 
 // The bitcoin network to resolve on.
 let btcNetwork = "btc-testnet"
@@ -15,28 +16,51 @@ let btcNetwork = "btc-testnet"
 // A client which can resolve PayIDs on the XRP ledger network.
 let payIDClient = PayIDClient(network: btcNetwork)
 
-// Resolve a PayID to an XRP Address.
-print("Resolving Pay ID: \(payID)")
-print("On network: \(xrplNetwork)")
-xrpPayIDClient.xrpAddress(for: payID) { result in
-  switch result {
-  case .success(let xrpAddress):
-    print("Resolved to \(xrpAddress)")
-    print("")
-  case .failure:
-    fatalError("Unknown error resolving address.")
+
+// Run items on a background thread because PayID client always calls back on the main thread and there is no
+// synchronous API.
+// TODO(keefertaylor): Clean this up when XpringKit supports thread management or synchronous APIs in PayID.
+let dispatchGroup = DispatchGroup()
+
+DispatchQueue.global(qos: .background).async {
+  dispatchGroup.enter()
+
+  print("Resolving Pay ID: \(payID)")
+  print("On XRP Network: \(xrplNetwork)")
+  xrpPayIDClient.xrpAddress(for:  "alice$dev.payid.xpring.money") { result in
+    switch result {
+    case .success(let xrpAddress):
+      print("Resolved to \(xrpAddress)")
+      print("")
+    case .failure(let error):
+      fatalError("Unknown error resolving address: \(error)")
+    }
+    dispatchGroup.leave()
   }
+  dispatchGroup.wait()
+
+
+  // Resolve a PayID to an BTC Address.
+  print("Resolving Pay ID: \(payID)")
+  print("On network: \(btcNetwork)")
+  dispatchGroup.enter()
+
+  payIDClient.address(for: payID) { result in
+    switch result {
+    case .success(let btcAddressComponents):
+      print("Resolved to \(btcAddressComponents.address)")
+      print("")
+    case .failure(let error):
+      fatalError("Unknown error resolving address: \(error)")
+    }
+    dispatchGroup.leave()
+
+  }
+  dispatchGroup.wait()
+
+  // Kill process with success code now that all work is done.
+  exit(EXIT_SUCCESS)
 }
 
-// Resolve a PayID to an BTC Address.
-print("Resolving Pay ID: \(payID)")
-print("On network: \(btcNetwork)")
-payIDClient.address(for: payID) { result in
-  switch result {
-  case .success(let btcAddressComponents):
-    print("Resolved to \(btcAddressComponents.address)")
-  case .failure:
-    fatalError("Unknown error resolving address.")
-  }
-}
-
+// Let async work run.
+dispatchMain()

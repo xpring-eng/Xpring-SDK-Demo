@@ -1,3 +1,4 @@
+import Foundation
 import XpringKit
 
 // The expected address of the gRPC server.
@@ -16,26 +17,43 @@ let payID = "alice$dev.payid.xpring.money"
 // The network to resolve on.
 let network = XRPLNetwork.test
 
-print("\nUsing rippled node located at: \(grpcURL)\n")
-let xrpClient = XRPClient(grpcURL: grpcURL, network: network)
 
-print("Using network: \(network)\n")
-let payIDClient = XRPPayIDClient(xrplNetwork: network)
+// Run items on a background thread because `XpringClient` always calls back on the main thread and there is no
+// synchronous API.
+// TODO(keefertaylor): Clean this up when XpringKit supports thread management or synchronous APIs in XpringClient.
+let dispatchGroup = DispatchGroup()
 
-let xpringClient = try! XpringClient(payIDClient: payIDClient, xrpClient: xrpClient)
+DispatchQueue.global(qos: .background).async {
 
-print("Sending:");
-print("- Drops \(dropsToSend)")
-print("- To: \(payID)")
-print("- From: \(wallet.address)\n")
+  print("\nUsing rippled node located at: \(grpcURL)\n")
+  let xrpClient = XRPClient(grpcURL: grpcURL, network: network)
 
-xpringClient.send(dropsToSend, to: payID, from: wallet) { result in
-  switch result {
-  case .success(let hash):
-    print("Hash for transaction:\n\(hash)\n")
-    let status = try! xrpClient.paymentStatus(for: hash)
-    print("Result for transaction is:\n\(status)\n")
-  case .failure:
-    fatalError("Unable to send transaction.")
+  print("Using network: \(network)\n")
+  let payIDClient = XRPPayIDClient(xrplNetwork: network)
+
+  let xpringClient = try! XpringClient(payIDClient: payIDClient, xrpClient: xrpClient)
+
+  print("Sending:");
+  print("- Drops \(dropsToSend)")
+  print("- To: \(payID)")
+  print("- From: \(wallet.address)\n")
+
+  dispatchGroup.enter()
+  xpringClient.send(dropsToSend, to: payID, from: wallet) { result in
+    switch result {
+    case .success(let hash):
+      print("Hash for transaction:\n\(hash)\n")
+      let status = try! xrpClient.paymentStatus(for: hash)
+      print("Result for transaction is:\n\(status)\n")
+    case .failure:
+      fatalError("Unable to send transaction.")
+    }
+    dispatchGroup.leave()
   }
+  dispatchGroup.wait()
+  // Kill process with success code now that all work is done.
+  exit(EXIT_SUCCESS)
 }
+
+// Let async work run.
+dispatchMain()

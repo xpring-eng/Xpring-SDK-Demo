@@ -7,22 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		122C3F593CB26A5E8A50D5B1 /* SwiftGRPC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF40EB4F37E027A22E6604B8 /* SwiftGRPC.framework */; };
-		12A21D1B1722168735C37FDD /* SwiftGRPC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF40EB4F37E027A22E6604B8 /* SwiftGRPC.framework */; };
 		19B33848FDF4FDB2FD2EB22A /* XpringKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC1538E2E17772942A5517C3 /* XpringKit.framework */; };
 		2B8DCF86F9F0D747B7C83479 /* XpringKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC1538E2E17772942A5517C3 /* XpringKit.framework */; };
-		3526551CC685E4D4BAB31531 /* SwiftGRPC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF40EB4F37E027A22E6604B8 /* SwiftGRPC.framework */; };
 		372E98976AFAB3E5C2D728AB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DB1E892CA869885F07214D /* main.swift */; };
-		5A1EE1EFE2575FCABBE73450 /* SwiftProtobuf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF1585449D11C6939D7D624 /* SwiftProtobuf.framework */; };
 		60F02DB3B43009EAB6E436DE /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB173D63859DB1E47B39D1E8 /* main.swift */; };
 		653621A692FB46904B26A341 /* XpringKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC1538E2E17772942A5517C3 /* XpringKit.framework */; };
 		6C09CE163C7A32D68FCD0A6C /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF22826DA9B1429A54447EE /* main.swift */; };
-		7F02CC93F4FCDA935E897A3C /* SwiftProtobuf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF1585449D11C6939D7D624 /* SwiftProtobuf.framework */; };
 		917748B805A397214656A79E /* XpringKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC1538E2E17772942A5517C3 /* XpringKit.framework */; };
-		A112CA8A4FA55728057863D7 /* SwiftGRPC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF40EB4F37E027A22E6604B8 /* SwiftGRPC.framework */; };
 		EAB26F61826425F1E8F84B2F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EFD27AC920765763AEC83D /* main.swift */; };
-		F5322189D79619491B3A742D /* SwiftProtobuf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF1585449D11C6939D7D624 /* SwiftProtobuf.framework */; };
-		F7D1C6FCF469C384A6E9C463 /* SwiftProtobuf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF1585449D11C6939D7D624 /* SwiftProtobuf.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,8 +23,6 @@
 		45D47AFFC029EBA3135ECE5B /* Xpring-Demo */ = {isa = PBXFileReference; includeInIndex = 0; path = "Xpring-Demo"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CF22826DA9B1429A54447EE /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		9E361485AE4C0990FFC4EB7D /* XRP-Demo */ = {isa = PBXFileReference; includeInIndex = 0; path = "XRP-Demo"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AF40EB4F37E027A22E6604B8 /* SwiftGRPC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SwiftGRPC.framework; sourceTree = "<group>"; };
-		CFF1585449D11C6939D7D624 /* SwiftProtobuf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SwiftProtobuf.framework; sourceTree = "<group>"; };
 		D25C211083B60DFFA3F86B4A /* ILP-Demo */ = {isa = PBXFileReference; includeInIndex = 0; path = "ILP-Demo"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7DB1E892CA869885F07214D /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		DB173D63859DB1E47B39D1E8 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -45,8 +35,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				653621A692FB46904B26A341 /* XpringKit.framework in Frameworks */,
-				F7D1C6FCF469C384A6E9C463 /* SwiftProtobuf.framework in Frameworks */,
-				12A21D1B1722168735C37FDD /* SwiftGRPC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,8 +43,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B8DCF86F9F0D747B7C83479 /* XpringKit.framework in Frameworks */,
-				5A1EE1EFE2575FCABBE73450 /* SwiftProtobuf.framework in Frameworks */,
-				3526551CC685E4D4BAB31531 /* SwiftGRPC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,8 +51,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				917748B805A397214656A79E /* XpringKit.framework in Frameworks */,
-				7F02CC93F4FCDA935E897A3C /* SwiftProtobuf.framework in Frameworks */,
-				A112CA8A4FA55728057863D7 /* SwiftGRPC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,8 +59,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				19B33848FDF4FDB2FD2EB22A /* XpringKit.framework in Frameworks */,
-				F5322189D79619491B3A742D /* SwiftProtobuf.framework in Frameworks */,
-				122C3F593CB26A5E8A50D5B1 /* SwiftGRPC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,8 +107,6 @@
 		E876459C1B932E983E6158AD /* Mac */ = {
 			isa = PBXGroup;
 			children = (
-				AF40EB4F37E027A22E6604B8 /* SwiftGRPC.framework */,
-				CFF1585449D11C6939D7D624 /* SwiftProtobuf.framework */,
 				DC1538E2E17772942A5517C3 /* XpringKit.framework */,
 			);
 			path = Mac;
