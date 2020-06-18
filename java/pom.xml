@@ -60,6 +60,20 @@
                         <cleanupDaemonThreads>false</cleanupDaemonThreads>
                     </configuration>
                 </execution>
+                <execution>
+                    <id>payid</id>
+                    <configuration>
+                        <mainClass>io.xpring.demo.PayIdDemo</mainClass>
+                        <cleanupDaemonThreads>false</cleanupDaemonThreads>
+                    </configuration>
+                </execution>
+                <execution>
+                    <id>xpring</id>
+                    <configuration>
+                        <mainClass>io.xpring.demo.XpringDemo</mainClass>
+                        <cleanupDaemonThreads>false</cleanupDaemonThreads>
+                    </configuration>
+                </execution>
             </executions>
         </plugin>
     </plugins>

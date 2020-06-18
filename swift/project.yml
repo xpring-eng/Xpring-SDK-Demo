@@ -8,8 +8,7 @@ targets:
     sources: [Sources/XRP]
     dependencies:
       - carthage: XpringKit
-      - carthage: SwiftProtobuf
-      - carthage: SwiftGRPC
+        findFrameworks: true
     settings:
       LD_RUNPATH_SEARCH_PATHS: "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks $(PROJECT_DIR)/Carthage/Build/Mac"
   ILP-Demo:
@@ -18,8 +17,25 @@ targets:
     sources: [Sources/ILP]
     dependencies:
       - carthage: XpringKit
-      - carthage: SwiftProtobuf
-      - carthage: SwiftGRPC
+        findFrameworks: true
     settings:
       LD_RUNPATH_SEARCH_PATHS: "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks $(PROJECT_DIR)/Carthage/Build/Mac"
-
+  # TODO(keefertaylor): Using "PayID-Demo" here causes this target to not generate. Investigate and fix.
+  PayId-Demo:
+    type: tool
+    platform: macOS
+    sources: [Sources/PayID]
+    dependencies:
+      - carthage: XpringKit
+        findFrameworks: true
+    settings:
+      LD_RUNPATH_SEARCH_PATHS: "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks $(PROJECT_DIR)/Carthage/Build/Mac"
+  Xpring-Demo:
+    type: tool
+    platform: macOS
+    sources: [Sources/Xpring]
+    dependencies:
+      - carthage: XpringKit
+        findFrameworks: true
+    settings:
+      LD_RUNPATH_SEARCH_PATHS: "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks $(PROJECT_DIR)/Carthage/Build/Mac"
