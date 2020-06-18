@@ -10,7 +10,7 @@ let xrplNetwork = XRPLNetwork.main
 // A client which can resolve PayIDs on the XRP ledger network.
 let xrpPayIDClient = XRPPayIDClient(xrplNetwork: .main)
 
-// The bitcoin network to resolve on.
+// Resolve on Bitcoin testnet.
 let btcNetwork = "btc-testnet"
 
 // A client which can resolve PayIDs on the XRP ledger network.
