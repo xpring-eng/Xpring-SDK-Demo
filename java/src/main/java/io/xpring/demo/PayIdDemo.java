@@ -23,7 +23,7 @@ public class PayIdDemo {
     // A client to resolve PayIDs on the Bitcoin network.
     PayIDClient btcPayIdClient = new PayIDClient(btcNetwork);
 
-    System.out.println("Resolving Pay ID: " + payId);
+    System.out.println("Resolving PayID: " + payId);
     System.out.println("On network: " + xrpNetwork);
 
     String xrpAddress = xrpPayIdClient.xrpAddressForPayID(payId);
