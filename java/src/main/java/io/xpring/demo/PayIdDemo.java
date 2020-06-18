@@ -20,7 +20,7 @@ public class PayIdDemo {
     // A client to resolve PayIDs on the XRP Ledger.
     XRPPayIDClient xrpPayIdClient = new XRPPayIDClient(xrpNetwork);
 
-    // A client to resolve PayIDs on the Bitcoin network.
+    // A client to resolve PayIDs on the Bitcoin testnet.
     PayIDClient btcPayIdClient = new PayIDClient(btcNetwork);
 
     System.out.println("Resolving PayID: " + payId);
@@ -30,7 +30,7 @@ public class PayIdDemo {
     System.out.println("Resolved to " + xrpAddress);
     System.out.println("");
 
-    System.out.println("Resolving Pay ID: " + payId);
+    System.out.println("Resolving PayID: " + payId);
     System.out.println("On network: " + btcNetwork);
     CryptoAddressDetails btcAddressComponents = btcPayIdClient.addressForPayID(payId);
     System.out.println("Resolved to " + btcAddressComponents.getAddress());
