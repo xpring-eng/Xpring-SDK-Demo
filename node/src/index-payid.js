@@ -12,18 +12,18 @@ const btcNetwork = 'btc-testnet'
 // A client to resolve PayIDs on the XRP Ledger.
 const xrpPayIdClient = new XRPPayIDClient(xrpNetwork);
 
-// A client to resolve PayIDs on the Bitcoin network.
+// A client to resolve PayIDs on the Bitcoin testnet.
 const btcPayIdClient = new PayIDClient(btcNetwork)
 
 async function main() {
-    console.log("Resolving Pay ID: " + payId);
+    console.log("Resolving PayID: " + payId);
     console.log("On network: " + networkToString(xrpNetwork))
 
     const xrpAddress = await xrpPayIdClient.xrpAddressForPayID(payId)
     console.log("Resolved to " + xrpAddress)
     console.log("")
 
-    console.log("Resolving Pay ID: " + payId);
+    console.log("Resolving PayID: " + payId);
     console.log("On network: " + btcNetwork)
     const btcAddressComponents = await btcPayIdClient.addressForPayID(payId)
     console.log("Resolved to " + btcAddressComponents.address)
