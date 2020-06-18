@@ -40,3 +40,5 @@ jobs:
             mvn package
             mvn exec:java@xrp
             mvn exec:java@ilp
+            mvn exec:java@payid
+            mvn exec:java@xpring
