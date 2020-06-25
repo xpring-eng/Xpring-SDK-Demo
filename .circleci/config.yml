@@ -32,7 +32,7 @@ jobs:
             cd swift
             set -o pipefail && xcodebuild build -scheme XRP-Demo ONLY_ACTIVE_ARCH=YES
             set -o pipefail && xcodebuild build -scheme ILP-Demo ONLY_ACTIVE_ARCH=YES
-            set -o pipefail && xcodebuild build -scheme PayID-Demo ONLY_ACTIVE_ARCH=YES
+            set -o pipefail && xcodebuild build -scheme PayId-Demo ONLY_ACTIVE_ARCH=YES
             set -o pipefail && xcodebuild build -scheme Xpring-Demo ONLY_ACTIVE_ARCH=YES
 
       - run:
