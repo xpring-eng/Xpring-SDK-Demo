@@ -7,21 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		131C022BBCABB53AA6783685 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DB1E892CA869885F07214D /* main.swift */; };
 		19B33848FDF4FDB2FD2EB22A /* XpringKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC1538E2E17772942A5517C3 /* XpringKit.framework */; };
 		2B8DCF86F9F0D747B7C83479 /* XpringKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC1538E2E17772942A5517C3 /* XpringKit.framework */; };
-		372E98976AFAB3E5C2D728AB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DB1E892CA869885F07214D /* main.swift */; };
+		4E1C740458EAC8D41F5A56ED /* XpringKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC1538E2E17772942A5517C3 /* XpringKit.framework */; };
 		60F02DB3B43009EAB6E436DE /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB173D63859DB1E47B39D1E8 /* main.swift */; };
-		653621A692FB46904B26A341 /* XpringKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC1538E2E17772942A5517C3 /* XpringKit.framework */; };
 		6C09CE163C7A32D68FCD0A6C /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF22826DA9B1429A54447EE /* main.swift */; };
 		917748B805A397214656A79E /* XpringKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC1538E2E17772942A5517C3 /* XpringKit.framework */; };
 		EAB26F61826425F1E8F84B2F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EFD27AC920765763AEC83D /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1F9C2BE13A896A45B0B8E7D0 /* PayID-Demo */ = {isa = PBXFileReference; includeInIndex = 0; path = "PayID-Demo"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20EFD27AC920765763AEC83D /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		45D47AFFC029EBA3135ECE5B /* Xpring-Demo */ = {isa = PBXFileReference; includeInIndex = 0; path = "Xpring-Demo"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CF22826DA9B1429A54447EE /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		8E87767ABC0DF17582D4EA10 /* PayId-Demo */ = {isa = PBXFileReference; includeInIndex = 0; path = "PayId-Demo"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E361485AE4C0990FFC4EB7D /* XRP-Demo */ = {isa = PBXFileReference; includeInIndex = 0; path = "XRP-Demo"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D25C211083B60DFFA3F86B4A /* ILP-Demo */ = {isa = PBXFileReference; includeInIndex = 0; path = "ILP-Demo"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7DB1E892CA869885F07214D /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -30,14 +30,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2ADD90BE106FAA4CD99FB96E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				653621A692FB46904B26A341 /* XpringKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		669653EF843641F6BDE67FC7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -51,6 +43,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				917748B805A397214656A79E /* XpringKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		976276E7E7C61322BC395220 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E1C740458EAC8D41F5A56ED /* XpringKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,7 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				D25C211083B60DFFA3F86B4A /* ILP-Demo */,
-				1F9C2BE13A896A45B0B8E7D0 /* PayID-Demo */,
+				8E87767ABC0DF17582D4EA10 /* PayId-Demo */,
 				45D47AFFC029EBA3135ECE5B /* Xpring-Demo */,
 				9E361485AE4C0990FFC4EB7D /* XRP-Demo */,
 			);
@@ -168,20 +168,20 @@
 			productReference = 45D47AFFC029EBA3135ECE5B /* Xpring-Demo */;
 			productType = "com.apple.product-type.tool";
 		};
-		5CB13ECF95DE47D873F43B3D /* PayID-Demo */ = {
+		0531344983529969FEF0F2F7 /* PayId-Demo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D9125A00C6DD72371544434D /* Build configuration list for PBXNativeTarget "PayID-Demo" */;
+			buildConfigurationList = 146575B094EDB64F939693B5 /* Build configuration list for PBXNativeTarget "PayId-Demo" */;
 			buildPhases = (
-				E98CD3B45262F196D0FA9EF2 /* Sources */,
-				2ADD90BE106FAA4CD99FB96E /* Frameworks */,
+				A2DC7A17FC1DE79C4D1F71A1 /* Sources */,
+				976276E7E7C61322BC395220 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "PayID-Demo";
-			productName = "PayID-Demo";
-			productReference = 1F9C2BE13A896A45B0B8E7D0 /* PayID-Demo */;
+			name = "PayId-Demo";
+			productName = "PayId-Demo";
+			productReference = 8E87767ABC0DF17582D4EA10 /* PayId-Demo */;
 			productType = "com.apple.product-type.tool";
 		};
 		CCC4CB7F78476367FA472897 /* ILP-Demo */ = {
@@ -238,7 +238,7 @@
 			projectRoot = "";
 			targets = (
 				CCC4CB7F78476367FA472897 /* ILP-Demo */,
-				5CB13ECF95DE47D873F43B3D /* PayID-Demo */,
+				0531344983529969FEF0F2F7 /* PayId-Demo */,
 				E007DC80467E4F945D2E9A2C /* XRP-Demo */,
 				03EAEC6BD32BFD581007C85D /* Xpring-Demo */,
 			);
@@ -262,6 +262,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A2DC7A17FC1DE79C4D1F71A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				131C022BBCABB53AA6783685 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C7FB367363D3D280E4AA3BC1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -270,17 +278,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E98CD3B45262F196D0FA9EF2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				372E98976AFAB3E5C2D728AB /* main.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		02CE4DBA6DFCC3A216792AC6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks $(PROJECT_DIR)/Carthage/Build/Mac";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.xpring.PayId-Demo";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
 		2AFC19D8214A33306E60D826 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -351,6 +365,20 @@
 			};
 			name = Release;
 		};
+		BB7CFA01A528883B07D4DD64 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks $(PROJECT_DIR)/Carthage/Build/Mac";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.xpring.PayId-Demo";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 		BED661692A9F40F7242D77BC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -410,20 +438,6 @@
 			};
 			name = Debug;
 		};
-		C47FA41C97435634A5FBEBAF /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks $(PROJECT_DIR)/Carthage/Build/Mac";
-				PRODUCT_BUNDLE_IDENTIFIER = "io.xpring.PayID-Demo";
-				SDKROOT = macosx;
-			};
-			name = Release;
-		};
 		D4730AD7D8CAAA6797C22B0A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -475,20 +489,6 @@
 			};
 			name = Release;
 		};
-		D56D7BE3465433E1F1A81CBC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks $(PROJECT_DIR)/Carthage/Build/Mac";
-				PRODUCT_BUNDLE_IDENTIFIER = "io.xpring.PayID-Demo";
-				SDKROOT = macosx;
-			};
-			name = Debug;
-		};
 		F387BECC6624500E2F3C2FB5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -511,6 +511,15 @@
 			buildConfigurations = (
 				46A46BBDB5FFC44586CF9B46 /* Debug */,
 				F387BECC6624500E2F3C2FB5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		146575B094EDB64F939693B5 /* Build configuration list for PBXNativeTarget "PayId-Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02CE4DBA6DFCC3A216792AC6 /* Debug */,
+				BB7CFA01A528883B07D4DD64 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
@@ -538,15 +547,6 @@
 			buildConfigurations = (
 				33F11D815C733F05003CC17A /* Debug */,
 				A41D8FE1AC5AFBE989D7250A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
-		D9125A00C6DD72371544434D /* Build configuration list for PBXNativeTarget "PayID-Demo" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D56D7BE3465433E1F1A81CBC /* Debug */,
-				C47FA41C97435634A5FBEBAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
