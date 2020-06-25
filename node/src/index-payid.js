@@ -1,41 +1,40 @@
-const { PayIDClient, XRPPayIDClient, XRPLNetwork } = require("xpring-js")
+const { PayIdClient, XrpPayIdClient, XrplNetwork } = require("xpring-js")
 
-// The Pay ID to resolve.
+// The PayID to resolve.
 const payId = 'alice$dev.payid.xpring.money'
 
 // The XRP network to resolve on. 
-const xrpNetwork = XRPLNetwork.Main
+const xrpNetwork = XrplNetwork.Main
 
 // The BTC network to resolve on.
 const btcNetwork = 'btc-testnet'
 
 // A client to resolve PayIDs on the XRP Ledger.
-const xrpPayIdClient = new XRPPayIDClient(xrpNetwork);
+const xrpPayIdClient = new XrpPayIdClient(xrpNetwork);
 
 // A client to resolve PayIDs on the Bitcoin testnet.
-const btcPayIdClient = new PayIDClient(btcNetwork)
+const btcPayIdClient = new PayIdClient()
 
 async function main() {
     console.log("Resolving PayID: " + payId);
-    console.log("On network: " + networkToString(xrpNetwork))
-
-    const xrpAddress = await xrpPayIdClient.xrpAddressForPayID(payId)
-    console.log("Resolved to " + xrpAddress)
+    console.log("On network: " + btcNetwork)
+    const btcAddressComponents = await btcPayIdClient.cryptoAddressForPayId(payId, btcNetwork)
+    console.log("Resolved to " + btcAddressComponents.address)
     console.log("")
 
     console.log("Resolving PayID: " + payId);
-    console.log("On network: " + btcNetwork)
-    const btcAddressComponents = await btcPayIdClient.addressForPayID(payId)
-    console.log("Resolved to " + btcAddressComponents.address)
+    console.log("On network: " + networkToString(xrpNetwork))
+    const xrpAddress = await xrpPayIdClient.xrpAddressForPayId(payId)
+    console.log("Resolved to " + xrpAddress)
 }
 
 function networkToString(network) {
     switch (network) {
-        case XRPLNetwork.Dev:
+        case XrplNetwork.Dev:
             return "Devnet"
-        case XRPLNetwork.Test:
+        case XrplNetwork.Test:
             return "Testnet"
-        case XRPLNetwork.Main:
+        case XrplNetwork.Main:
             return "Mainnet"
         default:
             return "Unknown Network"

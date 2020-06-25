@@ -1,11 +1,11 @@
-const { TransactionStatus, Wallet, XRPClient } = require("xpring-js")
+const { TransactionStatus, Wallet, XrpClient, XrplNetwork} = require("xpring-js")
 
 // The expected address of the gRPC server.
 // Some options:
 //     dev.xrp.xpring.io:50051
 //     test.xrp.xpring.io:50051
 //     main.xrp.xpring.io:50051
-const grpcURL = "test.xrp.xpring.io:50051";
+const grpcUrl = "test.xrp.xpring.io:50051";
 const wallet = Wallet.generateWalletFromSeed(
   "snYP7oArxKepd3GPDcrjMsJYiJeJB"
 );
@@ -14,9 +14,9 @@ const recipientAddress =
 const dropsToSend = "10";
 
 async function main() {
-  // Instantiate an XRPClient connected to the XRP Ledger Testnet
-  console.log("\nUsing rippled node located at: " + grpcURL + "\n");
-  const xrpClient = new XRPClient(grpcURL);
+  // Instantiate an XrpClient connected to the XRP Ledger Testnet
+  console.log("\nUsing rippled node located at: " + grpcUrl + "\n");
+  const xrpClient = new XrpClient(grpcUrl, XrplNetwork.Test);
 
   // Get account balance
   console.log("Retrieving balance for " + wallet.getAddress() + "..");
