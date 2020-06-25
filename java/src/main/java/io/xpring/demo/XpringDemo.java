@@ -1,20 +1,20 @@
 package io.xpring.demo;
 
-import io.xpring.payid.PayIDException;
+import io.xpring.payid.PayIdException;
 import io.xpring.xrpl.TransactionStatus;
 import io.xpring.xrpl.Wallet;
-import io.xpring.common.XRPLNetwork;
-import io.xpring.xrpl.XRPClient;
-import io.xpring.payid.XRPPayIDClient;
+import io.xpring.common.XrplNetwork;
+import io.xpring.xrpl.XrpClient;
+import io.xpring.payid.XrpPayIdClient;
 import io.xpring.xpring.XpringClient;
-import io.xpring.xrpl.XRPException;
+import io.xpring.xrpl.XrpException;
 
 import java.math.BigInteger;
 
 public class XpringDemo {
-  public static void main(String[] args) throws PayIDException, XRPException {
+  public static void main(String[] args) throws PayIdException, XrpException {
     // The expected address of the gRPC server.
-    String grpcURL = "test.xrp.xpring.io:50051";
+    String grpcUrl = "test.xrp.xpring.io:50051";
 
     // A wallet with funds on testnet.
     Wallet wallet = new Wallet("snYP7oArxKepd3GPDcrjMsJYiJeJB", true);
@@ -26,13 +26,13 @@ public class XpringDemo {
     String payID = "alice$dev.payid.xpring.money";
 
     // The network to resolve on.
-    XRPLNetwork network = XRPLNetwork.TEST;
+    XrplNetwork network = XrplNetwork.TEST;
 
-    System.out.println("\nUsing rippled node located at: " + grpcURL + "\n");
-    XRPClient xrpClient = new XRPClient(grpcURL, network);
+    System.out.println("\nUsing rippled node located at: " + grpcUrl + "\n");
+    XrpClient xrpClient = new XrpClient(grpcUrl, network);
 
     System.out.println("Using network: " + network + "\n");
-    XRPPayIDClient payIdClient = new XRPPayIDClient(network);
+    XrpPayIdClient payIdClient = new XrpPayIdClient(network);
 
     XpringClient xpringClient = new XpringClient(payIdClient, xrpClient);
 

@@ -1,14 +1,14 @@
 const { 
-    XRPPayIDClient, 
+    XrpPayIdClient, 
     TransactionStatus, 
     Wallet, 
-    XRPClient, 
-    XRPLNetwork, 
+    XrpClient, 
+    XrplNetwork, 
     XpringClient 
 } = require("xpring-js");
 
 // The expected address of the gRPC server.
-const grpcURL = "test.xrp.xpring.io:50051";
+const grpcUrl = "test.xrp.xpring.io:50051";
 
 // A wallet with funds on testnet.
 const wallet = Wallet.generateWalletFromSeed(
@@ -19,26 +19,26 @@ const wallet = Wallet.generateWalletFromSeed(
 // The number of drops to send.
 const dropsToSend = "10";
 
-// The Pay ID to resolve.
-const payID = 'alice$dev.payid.xpring.money'
+// The PayID to resolve.
+const payId = 'alice$dev.payid.xpring.money'
 
 // The network to resolve on. 
-const network = XRPLNetwork.Test
+const network = XrplNetwork.Test
 
 async function main() {
-    console.log("\nUsing rippled node located at: " + grpcURL + "\n");
-    const xrpClient = new XRPClient(grpcURL, network);
+    console.log("\nUsing rippled node located at: " + grpcUrl + "\n");
+    const xrpClient = new XrpClient(grpcUrl, network);
 
     console.log("Using network: " + networkToString(network) + "\n");
-    const payIDClient = new XRPPayIDClient(network);
+    const payIdClient = new XrpPayIdClient(network);
 
-    const xpringClient = new XpringClient(payIDClient, xrpClient);
+    const xpringClient = new XpringClient(payIdClient, xrpClient);
 
     console.log("Sending:");
     console.log("- Drops "+ dropsToSend)
-    console.log("- To: " + payID);
+    console.log("- To: " + payId);
     console.log("- From: " + wallet.getAddress() + "\n");
-    const hash = await xpringClient.send(dropsToSend, payID, wallet)
+    const hash = await xpringClient.send(dropsToSend, payId, wallet)
 
     console.log("Hash for transaction:\n" + hash + "\n");
   
@@ -49,11 +49,11 @@ async function main() {
 
 function networkToString(network) {
     switch (network) {
-        case XRPLNetwork.Dev:
+        case XrplNetwork.Dev:
             return "Devnet"
-        case XRPLNetwork.Test:
+        case XrplNetwork.Test:
             return "Testnet"
-        case XRPLNetwork.Main:
+        case XrplNetwork.Main:
             return "Mainnet"
         default:
             return "Unknown Network"

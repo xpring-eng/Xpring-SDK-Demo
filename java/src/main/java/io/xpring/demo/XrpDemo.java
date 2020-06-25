@@ -1,14 +1,14 @@
 package io.xpring.demo;
 
-import io.xpring.common.XRPLNetwork;
+import io.xpring.common.XrplNetwork;
 import io.xpring.xrpl.*;
-import io.xpring.xrpl.model.XRPTransaction;
+import io.xpring.xrpl.model.XrpTransaction;
 
 import java.math.BigInteger;
 import java.util.List;
 
 public class XrpDemo {
-    public static void main(String[] args) throws XRPException {
+    public static void main(String[] args) throws XrpException {
         // A URL to reach the remote rippled node at.
         // Some options:
         //     dev.xrp.xpring.io:50051
@@ -18,7 +18,7 @@ public class XrpDemo {
 
         // A wallet that exists on Testnet.
         String seed = "snYP7oArxKepd3GPDcrjMsJYiJeJB";
-        Wallet  wallet = new Wallet(seed);
+        Wallet wallet = new Wallet(seed);
 
         // A recipient address.
         String recipientAddress = "X7cBcY4bdTTzk3LHmrKAK6GyrirkXfLHGFxzke5zTmYMfw4";
@@ -26,7 +26,7 @@ public class XrpDemo {
 
         // Instantiate an XRPClient connected to the XRP Ledger Testnet
         System.out.println("\nUsing rippled node located at: " + grpcAddress + "\n");
-        XRPClient xrpClient = new XRPClient(grpcAddress, XRPLNetwork.TEST);
+        XrpClient xrpClient = new XrpClient(grpcAddress, XrplNetwork.TEST);
 
         // Get account balance
         System.out.println("Retrieving balance for" +  wallet.getAddress() + "..");
@@ -49,10 +49,10 @@ public class XrpDemo {
 
         // Retrieve full payment history for account
         System.out.println("Payment history for account " + wallet.getAddress() +":\n");
-        List<XRPTransaction> paymentHistory = xrpClient.paymentHistory(wallet.getAddress());
-        List<XRPTransaction> shortPaymentHistory = paymentHistory
+        List<XrpTransaction> paymentHistory = xrpClient.paymentHistory(wallet.getAddress());
+        List<XrpTransaction> shortPaymentHistory = paymentHistory
                                                         .subList(0, Integer.min(paymentHistory.size(), 5));
-        for (XRPTransaction transaction : shortPaymentHistory) {
+        for (XrpTransaction transaction : shortPaymentHistory) {
             System.out.println(transaction);
         }
     }
