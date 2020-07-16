@@ -2,7 +2,7 @@ const axios = require('axios')
 const EthereumTx = require('ethereumjs-tx').Transaction
 const open = require('open')
 const Web3 = require('web3')
-const { PayIDClient } = require('xpring-js')
+const { PayIdClient } = require('xpring-js')
 
 /**
  * The address you are sending from
@@ -72,9 +72,10 @@ const main = async () => {
   /**
    * Fetch the Eth address of GiveDirectly PayID
    */
-  const payIDClient = new PayIDClient('eth-mainnet')
-  const toAddress = await payIDClient.addressForPayID(
+  const payIdClient = new PayIdClient('eth-mainnet')
+  const toAddress = await payIdClient.cryptoAddressForPayId(
     'GiveDirectly$payid.charity',
+	'xrpl-testnet'
   )
 
   console.log(`Address is ${toAddress.address}\n`)
