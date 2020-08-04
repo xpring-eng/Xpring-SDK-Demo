@@ -231,7 +231,6 @@
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				Base,
 				en,
 			);
 			mainGroup = 42131D72FA16AEEBDD18AE11;
@@ -514,7 +513,7 @@
 				F387BECC6624500E2F3C2FB5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = "";
+			defaultConfigurationName = Debug;
 		};
 		146575B094EDB64F939693B5 /* Build configuration list for PBXNativeTarget "PayId-Demo" */ = {
 			isa = XCConfigurationList;
@@ -523,7 +522,7 @@
 				BB7CFA01A528883B07D4DD64 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = "";
+			defaultConfigurationName = Debug;
 		};
 		16F46EDC13646F481576F83C /* Build configuration list for PBXNativeTarget "Xpring-Demo" */ = {
 			isa = XCConfigurationList;
@@ -532,7 +531,7 @@
 				2AFC19D8214A33306E60D826 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = "";
+			defaultConfigurationName = Debug;
 		};
 		514ADDBB9CF5356ADD7D461C /* Build configuration list for PBXProject "XpringSDKDemo" */ = {
 			isa = XCConfigurationList;
@@ -550,7 +549,7 @@
 				A41D8FE1AC5AFBE989D7250A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = "";
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
