@@ -16,7 +16,7 @@
         <dependency>
             <groupId>io.xpring</groupId>
             <artifactId>xpring4j</artifactId>
-            <version>6.0.2</version>
+            <version>6.1.1</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
