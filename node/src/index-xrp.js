@@ -1,71 +1,58 @@
-const { TransactionStatus, Wallet, XrpClient, XrplNetwork} = require("xpring-js")
+const { Wallet, WalletFactory, XrplNetwork } = require("xpring-js")
+const bip39 = require('bip39')
+const addressCodec = require('ripple-address-codec')
+var mnemonic = 'seed sock milk update focus rotate barely fade car face mechanic mercy'
 
-// The expected address of the gRPC server.
-// Some options:
-//     dev.xrp.xpring.io:50051
-//     test.xrp.xpring.io:50051
-//     main.xrp.xpring.io:50051
-const grpcUrl = "test.xrp.xpring.io:50051";
-const wallet = Wallet.generateWalletFromSeed(
-  "snYP7oArxKepd3GPDcrjMsJYiJeJB"
-);
-const recipientAddress =
-  "X7cBcY4bdTTzk3LHmrKAK6GyrirkXfLHGFxzke5zTmYMfw4";
-const dropsToSend = "10";
+// ORIGINAL
+var entropy = bip39.mnemonicToEntropy(mnemonic);
+console.log("entropy:")
+console.log(entropy)
 
-async function main() {
-  // Instantiate an XrpClient connected to the XRP Ledger Testnet
-  console.log("\nUsing rippled node located at: " + grpcUrl + "\n");
-  const xrpClient = new XrpClient(grpcUrl, XrplNetwork.Test);
+var seedB58 = addressCodec.encodeSeed(Buffer.from(entropy, 'hex'), 'secp256k1');
+console.log("seedB58: ")
+console.log(seedB58)
 
-  // Get account balance
-  console.log("Retrieving balance for " + wallet.getAddress() + "..");
-  const balance = await xrpClient.getBalance(wallet.getAddress());
-  console.log("Balance was " + balance + " drops!\n");
+var seedBuffer = bip39.mnemonicToSeedSync(mnemonic)
 
-  // Send XRP
-  console.log("Sending:");
-  console.log("- Drops "+ dropsToSend)
-  console.log("- To: " + recipientAddress);
-  console.log("- From: " + wallet.getAddress() + "\n");
-  const hash = await xrpClient.send(
-    dropsToSend,
-    recipientAddress,
-    wallet
+var wallet = Wallet.generateWalletFromMnemonic(mnemonic, undefined, true);
+var wallet2 = Wallet.generateHDWalletFromSeed(seedBuffer, undefined, true);
+var wallet3 = Wallet.generateWalletFromSeed(seedB58)
+console.log("*** HDWALLET FROM MNEMONIC - orig")
+console.log(JSON.stringify(wallet))
+console.log("*** HDWALLET FROM SEED Buffer - orig")
+console.log(JSON.stringify(wallet2))
+console.log("*** WALLET FROM B58 seed - orig")
+console.log(JSON.stringify(wallet3))
+
+/**
+// USING WALLET
+var mnemonic = 'seed sock milk update focus rotate barely fade car face mechanic mercy'
+var seedBuffer = bip39.mnemonicToSeedSync(mnemonic)
+var wallet = Wallet.generateWalletFromMnemonic(mnemonic);
+var wallet2 = Wallet.generateHDWalletFromSeed(seedBuffer);
+console.log("*** WALLET FROM MNEMONIC -- Wallet")
+console.log(JSON.stringify(wallet))
+console.log("*** WALLET FROM SEED -- Wallet")
+console.log(JSON.stringify(wallet2))
+
+
+// USING WALLET FACTORY
+async function testWalletFactory() {
+  var mnemonic =
+  'seed sock milk update focus rotate barely fade car face mechanic mercy'
+  var walletFactory = new WalletFactory(XrplNetwork.Test)
+  var seedBuffer = bip39.mnemonicToSeedSync(mnemonic)
+  var wallet = await walletFactory.walletFromMnemonicAndDerivationPath(
+  mnemonic,
   )
-
-  // Check status of the payment
-  console.log("Hash for transaction:\n" + hash + "\n");
-  const status = await xrpClient.getPaymentStatus(hash);
-  console.log("Result for transaction is:\n" + statusCodeToString(status) + "\n");
-
-  // Retrieve full payment history for account
-  console.log("Payment history for account " + wallet.getAddress() + ": ");
-  const paymentHistory = await xrpClient.paymentHistory(wallet.getAddress());
-  const shortPaymentHistory = paymentHistory.slice(0, Math.min(paymentHistory.length, 5))
-  for (const transaction of shortPaymentHistory) {
-    console.log(transaction);
-  }
+  var wallet2 = walletFactory.walletFromSeedAndDerivationPath(
+  seedBuffer.toString('hex'),
+  )
+  console.log('*** WALLET FROM MNEMONIC -- WalletFactory')
+  console.log(JSON.stringify(wallet))
+  console.log('*** WALLET FROM SEED -- WalletFactory')
+  console.log(JSON.stringify(wallet2))
 }
 
-function statusCodeToString(status) {
-  switch (status) {
-    case TransactionStatus.Succeeded:
-      return "SUCCEEDED"
-    case TransactionStatus.Failed:
-      return "FAILED"
-    case TransactionStatus.Pending:
-      return "PENDING"
-    case TransactionStatus.Unknown:
-    default:
-      return "UNKNOWN"
-  }
-}
-
-// Exit with an error code if there is an error. 
-process.on('unhandledRejection', error => {
-  console.log(`Fatal: ${error}`)
-  process.exit(1)
-});
-
-main()
+testWalletFactory().then(()=> {})
+*/
