@@ -28,16 +28,15 @@ async function main() {
   console.log("- Drops "+ dropsToSend)
   console.log("- To: " + recipientAddress);
   console.log("- From: " + wallet.getAddress() + "\n");
-  const hash = await xrpClient.send(
+  const transactionResult = await xrpClient.sendXrp(
     dropsToSend,
     recipientAddress,
     wallet
   )
 
   // Check status of the payment
-  console.log("Hash for transaction:\n" + hash + "\n");
-  const status = await xrpClient.getPaymentStatus(hash);
-  console.log("Result for transaction is:\n" + statusCodeToString(status) + "\n");
+  console.log("Hash for transaction:\n" + transactionResult.hash + "\n");
+  console.log("Result for transaction is:\n" + statusCodeToString(transactionResult.status) + "\n");
 
   // Retrieve full payment history for account
   console.log("Payment history for account " + wallet.getAddress() + ": ");
@@ -54,6 +53,16 @@ function statusCodeToString(status) {
       return "SUCCEEDED"
     case TransactionStatus.Failed:
       return "FAILED"
+    case TransactionStatus.ClaimedCostOnly_PathPartial:
+      return "CLAIMED_COST_ONLY_PATH_PARTIAL"
+    case TransactionStatus.ClaimedCostOnly_PathDry:
+      return "CLAIMED_COST_ONLY_PATH_DRY"
+    case TransactionStatus.ClaimedCostOnly:
+      return "CLAIMED_COST_ONLY"
+    case TransactionStatus.MalformedTransaction:
+      return "MALFORMED_TRANSACTION"
+    case TransactionStatus.LastLedgerSequenceExpired:
+      return "LAST_LEDGER_SEQUENCE_EXPIRED"
     case TransactionStatus.Pending:
       return "PENDING"
     case TransactionStatus.Unknown:
