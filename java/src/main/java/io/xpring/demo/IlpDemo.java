@@ -21,7 +21,7 @@ public class IlpDemo {
         AccountBalance balance = ilpClient.getBalance(demoUserId, demoUserAuthToken);
         System.out.println("Net balance was " + balance.netBalance() + " with asset scale " + balance.assetScale());
 
-        String receiverPaymentPointer = "$xpring.money/demo_receiver";
+        String receiverPaymentPointer = "$stage.xpring.money/demo_receiver";
         UnsignedLong amountToSend = UnsignedLong.valueOf(100);
         System.out.println("Sending payment:");
         System.out.println("- From: " + demoUserId);
