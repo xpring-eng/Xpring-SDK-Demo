@@ -12,7 +12,7 @@ print("Retrieving balance for \(demoUserId)...")
 let getBalance = try ilpClient.getBalance(for: demoUserId, withAuthorization: demoUserAuthToken)
 print("Net balance was \(getBalance.netBalance) with asset scale \(getBalance.assetScale)")
 
-let receiverPaymentPointer = "$xpring.money/demo_receiver"
+let receiverPaymentPointer = "$stage.xpring.money/demo_receiver"
 let amountToSend: UInt64 = 100
 print("\nSending payment:")
 print("- From: \(demoUserId)")
