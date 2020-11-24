@@ -13,7 +13,7 @@ async function main() {
   const balance = await ilpClient.getBalance(demoUserId, demoUserAuthToken);
   console.log("Net balance was " + balance.netBalance + " with asset scale " + balance.assetScale)
 
-  const receiverPaymentPointer = "$xpring.money/demo_receiver";
+  const receiverPaymentPointer = "$stage.xpring.money/demo_receiver";
   let amountToSend = BigInt(100);
   console.log("\nSending payment:")
   console.log("- From: " + demoUserId)
